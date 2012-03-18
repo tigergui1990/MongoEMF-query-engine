@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipselabs.mongo.query/src-gen"
+    editDirectory="/org.eclipselabs.mongo.query.edit/src" editorDirectory="/org.eclipselabs.mongo.query.editor/src"
+    modelPluginID="org.eclipselabs.mongo.query" forceOverwrite="true" modelName="SQLQuery"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipselabs.mongo.query.edit"
+    editorPluginID="org.eclipselabs.mongo.query.editor">
+  <genPackages prefix="SQLQuery" basePackage="org.example.mongoemf" disposableProviderFactory="true"
+      ecorePackage="SQLQuery.ecore#/">
+    <genClasses ecoreClass="SQLQuery.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Model/attrs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQLQuery.ecore#//Model/db"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQLQuery.ecore#//Model/query"/>
+    </genClasses>
+    <genClasses ecoreClass="SQLQuery.ecore#//Database">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Database/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Database/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Database/dbName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Database/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SQLQuery.ecore#//QueryCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQLQuery.ecore#//QueryCondition/cond"/>
+    </genClasses>
+    <genClasses ecoreClass="SQLQuery.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Condition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Condition/comp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Condition/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

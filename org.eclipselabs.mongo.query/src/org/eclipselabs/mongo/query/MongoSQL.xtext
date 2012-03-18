@@ -1,0 +1,54 @@
+grammar org.example.mongoemf.SQLQuery with org.eclipse.xtext.common.Terminals
+
+generate sQLQuery "http://www.example.org/mongoemf/SQLQuery"
+
+Model:
+	'SELECT'
+	attrs=ColumnList
+	'FROM'
+	db=Database
+	(query=QueryCondition)?
+	;
+
+Database:
+	'mongo://' url=ID (':' port=INT)?
+	'/' dbName=ID
+	'/' name=ID
+;
+
+ColumnList:
+  ID (',' ID)*
+  | '*'
+;
+
+QueryCondition:
+	'WHERE'
+	cond+=Condition (Conjunction cond+=Condition)*
+;
+
+Condition:
+	name=ID comp=COMPARE value=VALUE
+;
+
+Conjunction:
+	'AND'
+	|'OR'
+;
+
+COMPARE:
+	EQUALS
+	|NOT_EQUALS
+	|LESS_THAN
+	|MORE_THAN
+;
+
+VALUE:
+	INT
+	|STRING
+;
+
+terminal EQUALS:'=';
+terminal NOT_EQUALS:'!='|'<>';
+terminal LESS_THAN:'<' ;
+terminal MORE_THAN:'>' ;
+
