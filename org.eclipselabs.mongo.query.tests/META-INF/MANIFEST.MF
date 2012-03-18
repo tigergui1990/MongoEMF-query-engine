@@ -12,7 +12,10 @@ Require-Bundle: org.eclipselabs.mongo.query,
  org.eclipse.xtext.junit4,
  org.eclipse.xtext.ui.junit,
  org.junit4,
- org.eclipse.ui.workbench;resolution:=optional
+ org.eclipse.ui.workbench;resolution:=optional,
+ com.mongodb;bundle-version="2.7.2",
+ org.eclipselabs.mongo.emf.junit;bundle-version="0.5.1",
+ org.eclipselabs.mongo.emf;bundle-version="0.5.1"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
