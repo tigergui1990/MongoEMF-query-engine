@@ -21,7 +21,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Database/name"/>
     </genClasses>
     <genClasses ecoreClass="SQLQuery.ecore#//QueryCondition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQLQuery.ecore#//QueryCondition/cond"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQLQuery.ecore#//QueryCondition/startcond"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQLQuery.ecore#//QueryCondition/followcond"/>
+    </genClasses>
+    <genClasses ecoreClass="SQLQuery.ecore#//FollowCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//FollowCondition/conjunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQLQuery.ecore#//FollowCondition/cond"/>
     </genClasses>
     <genClasses ecoreClass="SQLQuery.ecore#//Condition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQLQuery.ecore#//Condition/name"/>

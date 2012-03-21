@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.example.mongoemf.sQLQuery.Condition;
 import org.example.mongoemf.sQLQuery.Database;
+import org.example.mongoemf.sQLQuery.FollowCondition;
 import org.example.mongoemf.sQLQuery.Model;
 import org.example.mongoemf.sQLQuery.QueryCondition;
 import org.example.mongoemf.sQLQuery.SQLQueryPackage;
@@ -57,6 +58,12 @@ public class AbstractSQLQuerySemanticSequencer extends AbstractSemanticSequencer
 			case SQLQueryPackage.DATABASE:
 				if(context == grammarAccess.getDatabaseRule()) {
 					sequence_Database(context, (Database) semanticObject); 
+					return; 
+				}
+				else break;
+			case SQLQueryPackage.FOLLOW_CONDITION:
+				if(context == grammarAccess.getFollowConditionRule()) {
+					sequence_FollowCondition(context, (FollowCondition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -109,6 +116,25 @@ public class AbstractSQLQuerySemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (conjunction=Conjunction cond=Condition)
+	 */
+	protected void sequence_FollowCondition(EObject context, FollowCondition semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SQLQueryPackage.Literals.FOLLOW_CONDITION__CONJUNCTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLQueryPackage.Literals.FOLLOW_CONDITION__CONJUNCTION));
+			if(transientValues.isValueTransient(semanticObject, SQLQueryPackage.Literals.FOLLOW_CONDITION__COND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLQueryPackage.Literals.FOLLOW_CONDITION__COND));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFollowConditionAccess().getConjunctionConjunctionParserRuleCall_0_0(), semanticObject.getConjunction());
+		feeder.accept(grammarAccess.getFollowConditionAccess().getCondConditionParserRuleCall_1_0(), semanticObject.getCond());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (attrs=ColumnList db=Database query=QueryCondition?)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
@@ -118,7 +144,7 @@ public class AbstractSQLQuerySemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (cond+=Condition cond+=Condition*)
+	 *     (startcond=Condition followcond+=FollowCondition*)
 	 */
 	protected void sequence_QueryCondition(EObject context, QueryCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -172,13 +172,22 @@ public interface SQLQueryPackage extends EPackage
   int QUERY_CONDITION = 2;
 
   /**
-   * The feature id for the '<em><b>Cond</b></em>' containment reference list.
+   * The feature id for the '<em><b>Startcond</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUERY_CONDITION__COND = 0;
+  int QUERY_CONDITION__STARTCOND = 0;
+
+  /**
+   * The feature id for the '<em><b>Followcond</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_CONDITION__FOLLOWCOND = 1;
 
   /**
    * The number of structural features of the '<em>Query Condition</em>' class.
@@ -187,7 +196,44 @@ public interface SQLQueryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_CONDITION_FEATURE_COUNT = 1;
+  int QUERY_CONDITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.example.mongoemf.sQLQuery.impl.FollowConditionImpl <em>Follow Condition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.mongoemf.sQLQuery.impl.FollowConditionImpl
+   * @see org.example.mongoemf.sQLQuery.impl.SQLQueryPackageImpl#getFollowCondition()
+   * @generated
+   */
+  int FOLLOW_CONDITION = 3;
+
+  /**
+   * The feature id for the '<em><b>Conjunction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOW_CONDITION__CONJUNCTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOW_CONDITION__COND = 1;
+
+  /**
+   * The number of structural features of the '<em>Follow Condition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOW_CONDITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.example.mongoemf.sQLQuery.impl.ConditionImpl <em>Condition</em>}' class.
@@ -197,7 +243,7 @@ public interface SQLQueryPackage extends EPackage
    * @see org.example.mongoemf.sQLQuery.impl.SQLQueryPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 3;
+  int CONDITION = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -344,15 +390,58 @@ public interface SQLQueryPackage extends EPackage
   EClass getQueryCondition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.example.mongoemf.sQLQuery.QueryCondition#getCond <em>Cond</em>}'.
+   * Returns the meta object for the containment reference '{@link org.example.mongoemf.sQLQuery.QueryCondition#getStartcond <em>Startcond</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Cond</em>'.
-   * @see org.example.mongoemf.sQLQuery.QueryCondition#getCond()
+   * @return the meta object for the containment reference '<em>Startcond</em>'.
+   * @see org.example.mongoemf.sQLQuery.QueryCondition#getStartcond()
    * @see #getQueryCondition()
    * @generated
    */
-  EReference getQueryCondition_Cond();
+  EReference getQueryCondition_Startcond();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.example.mongoemf.sQLQuery.QueryCondition#getFollowcond <em>Followcond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Followcond</em>'.
+   * @see org.example.mongoemf.sQLQuery.QueryCondition#getFollowcond()
+   * @see #getQueryCondition()
+   * @generated
+   */
+  EReference getQueryCondition_Followcond();
+
+  /**
+   * Returns the meta object for class '{@link org.example.mongoemf.sQLQuery.FollowCondition <em>Follow Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Follow Condition</em>'.
+   * @see org.example.mongoemf.sQLQuery.FollowCondition
+   * @generated
+   */
+  EClass getFollowCondition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.mongoemf.sQLQuery.FollowCondition#getConjunction <em>Conjunction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Conjunction</em>'.
+   * @see org.example.mongoemf.sQLQuery.FollowCondition#getConjunction()
+   * @see #getFollowCondition()
+   * @generated
+   */
+  EAttribute getFollowCondition_Conjunction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.mongoemf.sQLQuery.FollowCondition#getCond <em>Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see org.example.mongoemf.sQLQuery.FollowCondition#getCond()
+   * @see #getFollowCondition()
+   * @generated
+   */
+  EReference getFollowCondition_Cond();
 
   /**
    * Returns the meta object for class '{@link org.example.mongoemf.sQLQuery.Condition <em>Condition</em>}'.
@@ -507,12 +596,46 @@ public interface SQLQueryPackage extends EPackage
     EClass QUERY_CONDITION = eINSTANCE.getQueryCondition();
 
     /**
-     * The meta object literal for the '<em><b>Cond</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Startcond</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference QUERY_CONDITION__COND = eINSTANCE.getQueryCondition_Cond();
+    EReference QUERY_CONDITION__STARTCOND = eINSTANCE.getQueryCondition_Startcond();
+
+    /**
+     * The meta object literal for the '<em><b>Followcond</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUERY_CONDITION__FOLLOWCOND = eINSTANCE.getQueryCondition_Followcond();
+
+    /**
+     * The meta object literal for the '{@link org.example.mongoemf.sQLQuery.impl.FollowConditionImpl <em>Follow Condition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.mongoemf.sQLQuery.impl.FollowConditionImpl
+     * @see org.example.mongoemf.sQLQuery.impl.SQLQueryPackageImpl#getFollowCondition()
+     * @generated
+     */
+    EClass FOLLOW_CONDITION = eINSTANCE.getFollowCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Conjunction</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOLLOW_CONDITION__CONJUNCTION = eINSTANCE.getFollowCondition_Conjunction();
+
+    /**
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOLLOW_CONDITION__COND = eINSTANCE.getFollowCondition_Cond();
 
     /**
      * The meta object literal for the '{@link org.example.mongoemf.sQLQuery.impl.ConditionImpl <em>Condition</em>}' class.

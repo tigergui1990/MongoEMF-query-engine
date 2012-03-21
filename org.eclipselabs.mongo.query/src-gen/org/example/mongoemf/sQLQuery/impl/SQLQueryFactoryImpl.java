@@ -71,6 +71,7 @@ public class SQLQueryFactoryImpl extends EFactoryImpl implements SQLQueryFactory
       case SQLQueryPackage.MODEL: return createModel();
       case SQLQueryPackage.DATABASE: return createDatabase();
       case SQLQueryPackage.QUERY_CONDITION: return createQueryCondition();
+      case SQLQueryPackage.FOLLOW_CONDITION: return createFollowCondition();
       case SQLQueryPackage.CONDITION: return createCondition();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -108,6 +109,17 @@ public class SQLQueryFactoryImpl extends EFactoryImpl implements SQLQueryFactory
   {
     QueryConditionImpl queryCondition = new QueryConditionImpl();
     return queryCondition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowCondition createFollowCondition()
+  {
+    FollowConditionImpl followCondition = new FollowConditionImpl();
+    return followCondition;
   }
 
   /**

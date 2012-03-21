@@ -47,7 +47,7 @@ public class SQLQueryParser extends AbstractContentAssistParser {
 					put(grammarAccess.getColumnListAccess().getGroup_0(), "rule__ColumnList__Group_0__0");
 					put(grammarAccess.getColumnListAccess().getGroup_0_1(), "rule__ColumnList__Group_0_1__0");
 					put(grammarAccess.getQueryConditionAccess().getGroup(), "rule__QueryCondition__Group__0");
-					put(grammarAccess.getQueryConditionAccess().getGroup_2(), "rule__QueryCondition__Group_2__0");
+					put(grammarAccess.getFollowConditionAccess().getGroup(), "rule__FollowCondition__Group__0");
 					put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
 					put(grammarAccess.getModelAccess().getAttrsAssignment_1(), "rule__Model__AttrsAssignment_1");
 					put(grammarAccess.getModelAccess().getDbAssignment_3(), "rule__Model__DbAssignment_3");
@@ -56,8 +56,10 @@ public class SQLQueryParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDatabaseAccess().getPortAssignment_2_1(), "rule__Database__PortAssignment_2_1");
 					put(grammarAccess.getDatabaseAccess().getDbNameAssignment_4(), "rule__Database__DbNameAssignment_4");
 					put(grammarAccess.getDatabaseAccess().getNameAssignment_6(), "rule__Database__NameAssignment_6");
-					put(grammarAccess.getQueryConditionAccess().getCondAssignment_1(), "rule__QueryCondition__CondAssignment_1");
-					put(grammarAccess.getQueryConditionAccess().getCondAssignment_2_1(), "rule__QueryCondition__CondAssignment_2_1");
+					put(grammarAccess.getQueryConditionAccess().getStartcondAssignment_1(), "rule__QueryCondition__StartcondAssignment_1");
+					put(grammarAccess.getQueryConditionAccess().getFollowcondAssignment_2(), "rule__QueryCondition__FollowcondAssignment_2");
+					put(grammarAccess.getFollowConditionAccess().getConjunctionAssignment_0(), "rule__FollowCondition__ConjunctionAssignment_0");
+					put(grammarAccess.getFollowConditionAccess().getCondAssignment_1(), "rule__FollowCondition__CondAssignment_1");
 					put(grammarAccess.getConditionAccess().getNameAssignment_0(), "rule__Condition__NameAssignment_0");
 					put(grammarAccess.getConditionAccess().getCompAssignment_1(), "rule__Condition__CompAssignment_1");
 					put(grammarAccess.getConditionAccess().getValueAssignment_2(), "rule__Condition__ValueAssignment_2");

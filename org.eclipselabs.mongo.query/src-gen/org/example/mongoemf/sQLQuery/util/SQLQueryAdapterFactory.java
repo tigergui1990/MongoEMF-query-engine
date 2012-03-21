@@ -94,6 +94,11 @@ public class SQLQueryAdapterFactory extends AdapterFactoryImpl
         return createQueryConditionAdapter();
       }
       @Override
+      public Adapter caseFollowCondition(FollowCondition object)
+      {
+        return createFollowConditionAdapter();
+      }
+      @Override
       public Adapter caseCondition(Condition object)
       {
         return createConditionAdapter();
@@ -161,6 +166,21 @@ public class SQLQueryAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createQueryConditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.example.mongoemf.sQLQuery.FollowCondition <em>Follow Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.mongoemf.sQLQuery.FollowCondition
+   * @generated
+   */
+  public Adapter createFollowConditionAdapter()
   {
     return null;
   }

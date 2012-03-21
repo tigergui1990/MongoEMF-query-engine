@@ -165,40 +165,60 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QueryCondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWHEREKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCondAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCondConditionParserRuleCall_1_0 = (RuleCall)cCondAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cConjunctionParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cCondAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cCondConditionParserRuleCall_2_1_0 = (RuleCall)cCondAssignment_2_1.eContents().get(0);
+		private final Assignment cStartcondAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStartcondConditionParserRuleCall_1_0 = (RuleCall)cStartcondAssignment_1.eContents().get(0);
+		private final Assignment cFollowcondAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFollowcondFollowConditionParserRuleCall_2_0 = (RuleCall)cFollowcondAssignment_2.eContents().get(0);
 		
 		//QueryCondition:
-		//	"WHERE" cond+=Condition (Conjunction cond+=Condition)*;
+		//	"WHERE" startcond=Condition followcond+=FollowCondition*;
 		public ParserRule getRule() { return rule; }
 
-		//"WHERE" cond+=Condition (Conjunction cond+=Condition)*
+		//"WHERE" startcond=Condition followcond+=FollowCondition*
 		public Group getGroup() { return cGroup; }
 
 		//"WHERE"
 		public Keyword getWHEREKeyword_0() { return cWHEREKeyword_0; }
 
-		//cond+=Condition
+		//startcond=Condition
+		public Assignment getStartcondAssignment_1() { return cStartcondAssignment_1; }
+
+		//Condition
+		public RuleCall getStartcondConditionParserRuleCall_1_0() { return cStartcondConditionParserRuleCall_1_0; }
+
+		//followcond+=FollowCondition*
+		public Assignment getFollowcondAssignment_2() { return cFollowcondAssignment_2; }
+
+		//FollowCondition
+		public RuleCall getFollowcondFollowConditionParserRuleCall_2_0() { return cFollowcondFollowConditionParserRuleCall_2_0; }
+	}
+
+	public class FollowConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FollowCondition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConjunctionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cConjunctionConjunctionParserRuleCall_0_0 = (RuleCall)cConjunctionAssignment_0.eContents().get(0);
+		private final Assignment cCondAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCondConditionParserRuleCall_1_0 = (RuleCall)cCondAssignment_1.eContents().get(0);
+		
+		//FollowCondition:
+		//	conjunction=Conjunction cond=Condition;
+		public ParserRule getRule() { return rule; }
+
+		//conjunction=Conjunction cond=Condition
+		public Group getGroup() { return cGroup; }
+
+		//conjunction=Conjunction
+		public Assignment getConjunctionAssignment_0() { return cConjunctionAssignment_0; }
+
+		//Conjunction
+		public RuleCall getConjunctionConjunctionParserRuleCall_0_0() { return cConjunctionConjunctionParserRuleCall_0_0; }
+
+		//cond=Condition
 		public Assignment getCondAssignment_1() { return cCondAssignment_1; }
 
 		//Condition
 		public RuleCall getCondConditionParserRuleCall_1_0() { return cCondConditionParserRuleCall_1_0; }
-
-		//(Conjunction cond+=Condition)*
-		public Group getGroup_2() { return cGroup_2; }
-
-		//Conjunction
-		public RuleCall getConjunctionParserRuleCall_2_0() { return cConjunctionParserRuleCall_2_0; }
-
-		//cond+=Condition
-		public Assignment getCondAssignment_2_1() { return cCondAssignment_2_1; }
-
-		//Condition
-		public RuleCall getCondConditionParserRuleCall_2_1_0() { return cCondConditionParserRuleCall_2_1_0; }
 	}
 
 	public class ConditionElements extends AbstractParserRuleElementFinder {
@@ -264,12 +284,15 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNOT_EQUALSTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cLESS_THANTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cMORE_THANTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cLESS_EQUALTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cMORE_EQUALTerminalRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cLIKETerminalRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//COMPARE:
-		//	EQUALS | NOT_EQUALS | LESS_THAN | MORE_THAN;
+		//	EQUALS | NOT_EQUALS | LESS_THAN | MORE_THAN | LESS_EQUAL | MORE_EQUAL | LIKE;
 		public ParserRule getRule() { return rule; }
 
-		//EQUALS | NOT_EQUALS | LESS_THAN | MORE_THAN
+		//EQUALS | NOT_EQUALS | LESS_THAN | MORE_THAN | LESS_EQUAL | MORE_EQUAL | LIKE
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//EQUALS
@@ -283,6 +306,15 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 
 		//MORE_THAN
 		public RuleCall getMORE_THANTerminalRuleCall_3() { return cMORE_THANTerminalRuleCall_3; }
+
+		//LESS_EQUAL
+		public RuleCall getLESS_EQUALTerminalRuleCall_4() { return cLESS_EQUALTerminalRuleCall_4; }
+
+		//MORE_EQUAL
+		public RuleCall getMORE_EQUALTerminalRuleCall_5() { return cMORE_EQUALTerminalRuleCall_5; }
+
+		//LIKE
+		public RuleCall getLIKETerminalRuleCall_6() { return cLIKETerminalRuleCall_6; }
 	}
 
 	public class VALUEElements extends AbstractParserRuleElementFinder {
@@ -310,6 +342,7 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 	private DatabaseElements pDatabase;
 	private ColumnListElements pColumnList;
 	private QueryConditionElements pQueryCondition;
+	private FollowConditionElements pFollowCondition;
 	private ConditionElements pCondition;
 	private ConjunctionElements pConjunction;
 	private COMPAREElements pCOMPARE;
@@ -317,7 +350,10 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tEQUALS;
 	private TerminalRule tNOT_EQUALS;
 	private TerminalRule tLESS_THAN;
+	private TerminalRule tLESS_EQUAL;
+	private TerminalRule tMORE_EQUAL;
 	private TerminalRule tMORE_THAN;
+	private TerminalRule tLIKE;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -371,13 +407,23 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QueryCondition:
-	//	"WHERE" cond+=Condition (Conjunction cond+=Condition)*;
+	//	"WHERE" startcond=Condition followcond+=FollowCondition*;
 	public QueryConditionElements getQueryConditionAccess() {
 		return (pQueryCondition != null) ? pQueryCondition : (pQueryCondition = new QueryConditionElements());
 	}
 	
 	public ParserRule getQueryConditionRule() {
 		return getQueryConditionAccess().getRule();
+	}
+
+	//FollowCondition:
+	//	conjunction=Conjunction cond=Condition;
+	public FollowConditionElements getFollowConditionAccess() {
+		return (pFollowCondition != null) ? pFollowCondition : (pFollowCondition = new FollowConditionElements());
+	}
+	
+	public ParserRule getFollowConditionRule() {
+		return getFollowConditionAccess().getRule();
 	}
 
 	//Condition:
@@ -401,7 +447,7 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//COMPARE:
-	//	EQUALS | NOT_EQUALS | LESS_THAN | MORE_THAN;
+	//	EQUALS | NOT_EQUALS | LESS_THAN | MORE_THAN | LESS_EQUAL | MORE_EQUAL | LIKE;
 	public COMPAREElements getCOMPAREAccess() {
 		return (pCOMPARE != null) ? pCOMPARE : (pCOMPARE = new COMPAREElements());
 	}
@@ -438,10 +484,28 @@ public class SQLQueryGrammarAccess extends AbstractGrammarElementFinder {
 		return (tLESS_THAN != null) ? tLESS_THAN : (tLESS_THAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LESS_THAN"));
 	} 
 
+	//terminal LESS_EQUAL:
+	//	"<=";
+	public TerminalRule getLESS_EQUALRule() {
+		return (tLESS_EQUAL != null) ? tLESS_EQUAL : (tLESS_EQUAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LESS_EQUAL"));
+	} 
+
+	//terminal MORE_EQUAL:
+	//	">=";
+	public TerminalRule getMORE_EQUALRule() {
+		return (tMORE_EQUAL != null) ? tMORE_EQUAL : (tMORE_EQUAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MORE_EQUAL"));
+	} 
+
 	//terminal MORE_THAN:
 	//	">";
 	public TerminalRule getMORE_THANRule() {
 		return (tMORE_THAN != null) ? tMORE_THAN : (tMORE_THAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MORE_THAN"));
+	} 
+
+	//terminal LIKE:
+	//	"LIKE";
+	public TerminalRule getLIKERule() {
+		return (tLIKE != null) ? tLIKE : (tLIKE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LIKE"));
 	} 
 
 	//terminal ID:

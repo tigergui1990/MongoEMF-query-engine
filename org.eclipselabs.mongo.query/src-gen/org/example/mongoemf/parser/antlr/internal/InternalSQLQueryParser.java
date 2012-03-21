@@ -21,29 +21,32 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_EQUALS", "RULE_NOT_EQUALS", "RULE_LESS_THAN", "RULE_MORE_THAN", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SELECT'", "'FROM'", "'mongo://'", "':'", "'/'", "','", "'*'", "'WHERE'", "'AND'", "'OR'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_EQUALS", "RULE_NOT_EQUALS", "RULE_LESS_THAN", "RULE_MORE_THAN", "RULE_LESS_EQUAL", "RULE_MORE_EQUAL", "RULE_LIKE", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SELECT'", "'FROM'", "'mongo://'", "':'", "'/'", "','", "'*'", "'WHERE'", "'AND'", "'OR'"
     };
     public static final int RULE_ID=4;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int RULE_LIKE=12;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
     public static final int RULE_MORE_THAN=9;
-    public static final int RULE_ANY_OTHER=14;
+    public static final int RULE_ANY_OTHER=17;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=12;
+    public static final int RULE_SL_COMMENT=15;
     public static final int EOF=-1;
     public static final int RULE_NOT_EQUALS=7;
-    public static final int RULE_ML_COMMENT=11;
+    public static final int RULE_ML_COMMENT=14;
     public static final int T__19=19;
-    public static final int RULE_STRING=10;
-    public static final int T__16=16;
-    public static final int T__15=15;
+    public static final int RULE_STRING=13;
     public static final int T__18=18;
-    public static final int T__17=17;
+    public static final int RULE_MORE_EQUAL=11;
+    public static final int RULE_LESS_EQUAL=10;
     public static final int RULE_INT=5;
     public static final int RULE_EQUALS=6;
-    public static final int RULE_WS=13;
+    public static final int RULE_WS=16;
     public static final int RULE_LESS_THAN=8;
 
     // delegates
@@ -143,7 +146,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:80:1: (otherlv_0= 'SELECT' ( (lv_attrs_1_0= ruleColumnList ) ) otherlv_2= 'FROM' ( (lv_db_3_0= ruleDatabase ) ) ( (lv_query_4_0= ruleQueryCondition ) )? )
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:80:3: otherlv_0= 'SELECT' ( (lv_attrs_1_0= ruleColumnList ) ) otherlv_2= 'FROM' ( (lv_db_3_0= ruleDatabase ) ) ( (lv_query_4_0= ruleQueryCondition ) )?
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleModel122); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleModel122); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getModelAccess().getSELECTKeyword_0());
                 
@@ -178,7 +181,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleModel155); 
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleModel155); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getModelAccess().getFROMKeyword_2());
                 
@@ -217,7 +220,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==22) ) {
+            if ( (LA1_0==25) ) {
                 alt1=1;
             }
             switch (alt1) {
@@ -334,7 +337,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:163:1: (otherlv_0= 'mongo://' ( (lv_url_1_0= RULE_ID ) ) (otherlv_2= ':' ( (lv_port_3_0= RULE_INT ) ) )? otherlv_4= '/' ( (lv_dbName_5_0= RULE_ID ) ) otherlv_6= '/' ( (lv_name_7_0= RULE_ID ) ) )
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:163:3: otherlv_0= 'mongo://' ( (lv_url_1_0= RULE_ID ) ) (otherlv_2= ':' ( (lv_port_3_0= RULE_INT ) ) )? otherlv_4= '/' ( (lv_dbName_5_0= RULE_ID ) ) otherlv_6= '/' ( (lv_name_7_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleDatabase281); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleDatabase281); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDatabaseAccess().getMongoKeyword_0());
                 
@@ -368,14 +371,14 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==18) ) {
+            if ( (LA2_0==21) ) {
                 alt2=1;
             }
             switch (alt2) {
                 case 1 :
                     // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:185:4: otherlv_2= ':' ( (lv_port_3_0= RULE_INT ) )
                     {
-                    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleDatabase316); 
+                    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleDatabase316); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getDatabaseAccess().getColonKeyword_2_0());
                         
@@ -411,7 +414,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleDatabase352); 
+            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleDatabase352); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getDatabaseAccess().getSolidusKeyword_3());
                 
@@ -441,7 +444,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleDatabase386); 
+            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleDatabase386); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getDatabaseAccess().getSolidusKeyword_5());
                 
@@ -549,7 +552,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             if ( (LA4_0==RULE_ID) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==21) ) {
+            else if ( (LA4_0==24) ) {
                 alt4=2;
             }
             else {
@@ -578,7 +581,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                         int alt3=2;
                         int LA3_0 = input.LA(1);
 
-                        if ( (LA3_0==20) ) {
+                        if ( (LA3_0==23) ) {
                             alt3=1;
                         }
 
@@ -587,7 +590,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:280:2: kw= ',' this_ID_2= RULE_ID
                     	    {
-                    	    kw=(Token)match(input,20,FOLLOW_20_in_ruleColumnList516); 
+                    	    kw=(Token)match(input,23,FOLLOW_23_in_ruleColumnList516); 
 
                     	            current.merge(kw);
                     	            newLeafNode(kw, grammarAccess.getColumnListAccess().getCommaKeyword_0_1_0()); 
@@ -617,7 +620,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:294:2: kw= '*'
                     {
-                    kw=(Token)match(input,21,FOLLOW_21_in_ruleColumnList558); 
+                    kw=(Token)match(input,24,FOLLOW_24_in_ruleColumnList558); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getColumnListAccess().getAsteriskKeyword_1()); 
@@ -682,40 +685,40 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQueryCondition"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:316:1: ruleQueryCondition returns [EObject current=null] : (otherlv_0= 'WHERE' ( (lv_cond_1_0= ruleCondition ) ) ( ruleConjunction ( (lv_cond_3_0= ruleCondition ) ) )* ) ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:316:1: ruleQueryCondition returns [EObject current=null] : (otherlv_0= 'WHERE' ( (lv_startcond_1_0= ruleCondition ) ) ( (lv_followcond_2_0= ruleFollowCondition ) )* ) ;
     public final EObject ruleQueryCondition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        EObject lv_cond_1_0 = null;
+        EObject lv_startcond_1_0 = null;
 
-        EObject lv_cond_3_0 = null;
+        EObject lv_followcond_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:319:28: ( (otherlv_0= 'WHERE' ( (lv_cond_1_0= ruleCondition ) ) ( ruleConjunction ( (lv_cond_3_0= ruleCondition ) ) )* ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:320:1: (otherlv_0= 'WHERE' ( (lv_cond_1_0= ruleCondition ) ) ( ruleConjunction ( (lv_cond_3_0= ruleCondition ) ) )* )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:319:28: ( (otherlv_0= 'WHERE' ( (lv_startcond_1_0= ruleCondition ) ) ( (lv_followcond_2_0= ruleFollowCondition ) )* ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:320:1: (otherlv_0= 'WHERE' ( (lv_startcond_1_0= ruleCondition ) ) ( (lv_followcond_2_0= ruleFollowCondition ) )* )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:320:1: (otherlv_0= 'WHERE' ( (lv_cond_1_0= ruleCondition ) ) ( ruleConjunction ( (lv_cond_3_0= ruleCondition ) ) )* )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:320:3: otherlv_0= 'WHERE' ( (lv_cond_1_0= ruleCondition ) ) ( ruleConjunction ( (lv_cond_3_0= ruleCondition ) ) )*
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:320:1: (otherlv_0= 'WHERE' ( (lv_startcond_1_0= ruleCondition ) ) ( (lv_followcond_2_0= ruleFollowCondition ) )* )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:320:3: otherlv_0= 'WHERE' ( (lv_startcond_1_0= ruleCondition ) ) ( (lv_followcond_2_0= ruleFollowCondition ) )*
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleQueryCondition645); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleQueryCondition645); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getQueryConditionAccess().getWHEREKeyword_0());
                 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:324:1: ( (lv_cond_1_0= ruleCondition ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:325:1: (lv_cond_1_0= ruleCondition )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:324:1: ( (lv_startcond_1_0= ruleCondition ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:325:1: (lv_startcond_1_0= ruleCondition )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:325:1: (lv_cond_1_0= ruleCondition )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:326:3: lv_cond_1_0= ruleCondition
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:325:1: (lv_startcond_1_0= ruleCondition )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:326:3: lv_startcond_1_0= ruleCondition
             {
              
-            	        newCompositeNode(grammarAccess.getQueryConditionAccess().getCondConditionParserRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getQueryConditionAccess().getStartcondConditionParserRuleCall_1_0()); 
             	    
             pushFollow(FOLLOW_ruleCondition_in_ruleQueryCondition666);
-            lv_cond_1_0=ruleCondition();
+            lv_startcond_1_0=ruleCondition();
 
             state._fsp--;
 
@@ -723,10 +726,10 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             	        if (current==null) {
             	            current = createModelElementForParent(grammarAccess.getQueryConditionRule());
             	        }
-                   		add(
+                   		set(
                    			current, 
-                   			"cond",
-                    		lv_cond_1_0, 
+                   			"startcond",
+                    		lv_startcond_1_0, 
                     		"Condition");
             	        afterParserOrEnumRuleCall();
             	    
@@ -736,43 +739,29 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:342:2: ( ruleConjunction ( (lv_cond_3_0= ruleCondition ) ) )*
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:342:2: ( (lv_followcond_2_0= ruleFollowCondition ) )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( ((LA5_0>=23 && LA5_0<=24)) ) {
+                if ( ((LA5_0>=26 && LA5_0<=27)) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:343:5: ruleConjunction ( (lv_cond_3_0= ruleCondition ) )
+            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:343:1: (lv_followcond_2_0= ruleFollowCondition )
+            	    {
+            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:343:1: (lv_followcond_2_0= ruleFollowCondition )
+            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:344:3: lv_followcond_2_0= ruleFollowCondition
             	    {
             	     
-            	            newCompositeNode(grammarAccess.getQueryConditionAccess().getConjunctionParserRuleCall_2_0()); 
-            	        
-            	    pushFollow(FOLLOW_ruleConjunction_in_ruleQueryCondition683);
-            	    ruleConjunction();
-
-            	    state._fsp--;
-
-            	     
-            	            afterParserOrEnumRuleCall();
-            	        
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:350:1: ( (lv_cond_3_0= ruleCondition ) )
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:351:1: (lv_cond_3_0= ruleCondition )
-            	    {
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:351:1: (lv_cond_3_0= ruleCondition )
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:352:3: lv_cond_3_0= ruleCondition
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getQueryConditionAccess().getCondConditionParserRuleCall_2_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getQueryConditionAccess().getFollowcondFollowConditionParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleCondition_in_ruleQueryCondition703);
-            	    lv_cond_3_0=ruleCondition();
+            	    pushFollow(FOLLOW_ruleFollowCondition_in_ruleQueryCondition687);
+            	    lv_followcond_2_0=ruleFollowCondition();
 
             	    state._fsp--;
 
@@ -782,14 +771,11 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		add(
             	           			current, 
-            	           			"cond",
-            	            		lv_cond_3_0, 
-            	            		"Condition");
+            	           			"followcond",
+            	            		lv_followcond_2_0, 
+            	            		"FollowCondition");
             	    	        afterParserOrEnumRuleCall();
             	    	    
-
-            	    }
-
 
             	    }
 
@@ -822,8 +808,145 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleQueryCondition"
 
 
+    // $ANTLR start "entryRuleFollowCondition"
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:368:1: entryRuleFollowCondition returns [EObject current=null] : iv_ruleFollowCondition= ruleFollowCondition EOF ;
+    public final EObject entryRuleFollowCondition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleFollowCondition = null;
+
+
+        try {
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:369:2: (iv_ruleFollowCondition= ruleFollowCondition EOF )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:370:2: iv_ruleFollowCondition= ruleFollowCondition EOF
+            {
+             newCompositeNode(grammarAccess.getFollowConditionRule()); 
+            pushFollow(FOLLOW_ruleFollowCondition_in_entryRuleFollowCondition724);
+            iv_ruleFollowCondition=ruleFollowCondition();
+
+            state._fsp--;
+
+             current =iv_ruleFollowCondition; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowCondition734); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleFollowCondition"
+
+
+    // $ANTLR start "ruleFollowCondition"
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:377:1: ruleFollowCondition returns [EObject current=null] : ( ( (lv_conjunction_0_0= ruleConjunction ) ) ( (lv_cond_1_0= ruleCondition ) ) ) ;
+    public final EObject ruleFollowCondition() throws RecognitionException {
+        EObject current = null;
+
+        AntlrDatatypeRuleToken lv_conjunction_0_0 = null;
+
+        EObject lv_cond_1_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:380:28: ( ( ( (lv_conjunction_0_0= ruleConjunction ) ) ( (lv_cond_1_0= ruleCondition ) ) ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:381:1: ( ( (lv_conjunction_0_0= ruleConjunction ) ) ( (lv_cond_1_0= ruleCondition ) ) )
+            {
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:381:1: ( ( (lv_conjunction_0_0= ruleConjunction ) ) ( (lv_cond_1_0= ruleCondition ) ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:381:2: ( (lv_conjunction_0_0= ruleConjunction ) ) ( (lv_cond_1_0= ruleCondition ) )
+            {
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:381:2: ( (lv_conjunction_0_0= ruleConjunction ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:382:1: (lv_conjunction_0_0= ruleConjunction )
+            {
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:382:1: (lv_conjunction_0_0= ruleConjunction )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:383:3: lv_conjunction_0_0= ruleConjunction
+            {
+             
+            	        newCompositeNode(grammarAccess.getFollowConditionAccess().getConjunctionConjunctionParserRuleCall_0_0()); 
+            	    
+            pushFollow(FOLLOW_ruleConjunction_in_ruleFollowCondition780);
+            lv_conjunction_0_0=ruleConjunction();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getFollowConditionRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"conjunction",
+                    		lv_conjunction_0_0, 
+                    		"Conjunction");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:399:2: ( (lv_cond_1_0= ruleCondition ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:400:1: (lv_cond_1_0= ruleCondition )
+            {
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:400:1: (lv_cond_1_0= ruleCondition )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:401:3: lv_cond_1_0= ruleCondition
+            {
+             
+            	        newCompositeNode(grammarAccess.getFollowConditionAccess().getCondConditionParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleCondition_in_ruleFollowCondition801);
+            lv_cond_1_0=ruleCondition();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getFollowConditionRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"cond",
+                    		lv_cond_1_0, 
+                    		"Condition");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleFollowCondition"
+
+
     // $ANTLR start "entryRuleCondition"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:376:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:425:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
     public final EObject entryRuleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -831,17 +954,17 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:377:2: (iv_ruleCondition= ruleCondition EOF )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:378:2: iv_ruleCondition= ruleCondition EOF
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:426:2: (iv_ruleCondition= ruleCondition EOF )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:427:2: iv_ruleCondition= ruleCondition EOF
             {
              newCompositeNode(grammarAccess.getConditionRule()); 
-            pushFollow(FOLLOW_ruleCondition_in_entryRuleCondition741);
+            pushFollow(FOLLOW_ruleCondition_in_entryRuleCondition837);
             iv_ruleCondition=ruleCondition();
 
             state._fsp--;
 
              current =iv_ruleCondition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCondition751); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCondition847); 
 
             }
 
@@ -859,7 +982,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:385:1: ruleCondition returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) ) ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:434:1: ruleCondition returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) ) ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -872,19 +995,19 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:388:28: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:389:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:437:28: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:438:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:389:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:389:2: ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:438:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:438:2: ( (lv_name_0_0= RULE_ID ) ) ( (lv_comp_1_0= ruleCOMPARE ) ) ( (lv_value_2_0= ruleVALUE ) )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:389:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:390:1: (lv_name_0_0= RULE_ID )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:438:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:439:1: (lv_name_0_0= RULE_ID )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:390:1: (lv_name_0_0= RULE_ID )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:391:3: lv_name_0_0= RULE_ID
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:439:1: (lv_name_0_0= RULE_ID )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:440:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCondition793); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCondition889); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getConditionAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -904,16 +1027,16 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:407:2: ( (lv_comp_1_0= ruleCOMPARE ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:408:1: (lv_comp_1_0= ruleCOMPARE )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:456:2: ( (lv_comp_1_0= ruleCOMPARE ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:457:1: (lv_comp_1_0= ruleCOMPARE )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:408:1: (lv_comp_1_0= ruleCOMPARE )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:409:3: lv_comp_1_0= ruleCOMPARE
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:457:1: (lv_comp_1_0= ruleCOMPARE )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:458:3: lv_comp_1_0= ruleCOMPARE
             {
              
             	        newCompositeNode(grammarAccess.getConditionAccess().getCompCOMPAREParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleCOMPARE_in_ruleCondition819);
+            pushFollow(FOLLOW_ruleCOMPARE_in_ruleCondition915);
             lv_comp_1_0=ruleCOMPARE();
 
             state._fsp--;
@@ -935,16 +1058,16 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:425:2: ( (lv_value_2_0= ruleVALUE ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:426:1: (lv_value_2_0= ruleVALUE )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:474:2: ( (lv_value_2_0= ruleVALUE ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:475:1: (lv_value_2_0= ruleVALUE )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:426:1: (lv_value_2_0= ruleVALUE )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:427:3: lv_value_2_0= ruleVALUE
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:475:1: (lv_value_2_0= ruleVALUE )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:476:3: lv_value_2_0= ruleVALUE
             {
              
             	        newCompositeNode(grammarAccess.getConditionAccess().getValueVALUEParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleVALUE_in_ruleCondition840);
+            pushFollow(FOLLOW_ruleVALUE_in_ruleCondition936);
             lv_value_2_0=ruleVALUE();
 
             state._fsp--;
@@ -987,7 +1110,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConjunction"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:451:1: entryRuleConjunction returns [String current=null] : iv_ruleConjunction= ruleConjunction EOF ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:500:1: entryRuleConjunction returns [String current=null] : iv_ruleConjunction= ruleConjunction EOF ;
     public final String entryRuleConjunction() throws RecognitionException {
         String current = null;
 
@@ -995,17 +1118,17 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:452:2: (iv_ruleConjunction= ruleConjunction EOF )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:453:2: iv_ruleConjunction= ruleConjunction EOF
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:501:2: (iv_ruleConjunction= ruleConjunction EOF )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:502:2: iv_ruleConjunction= ruleConjunction EOF
             {
              newCompositeNode(grammarAccess.getConjunctionRule()); 
-            pushFollow(FOLLOW_ruleConjunction_in_entryRuleConjunction877);
+            pushFollow(FOLLOW_ruleConjunction_in_entryRuleConjunction973);
             iv_ruleConjunction=ruleConjunction();
 
             state._fsp--;
 
              current =iv_ruleConjunction.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConjunction888); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConjunction984); 
 
             }
 
@@ -1023,7 +1146,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConjunction"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:460:1: ruleConjunction returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'AND' | kw= 'OR' ) ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:509:1: ruleConjunction returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'AND' | kw= 'OR' ) ;
     public final AntlrDatatypeRuleToken ruleConjunction() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1032,17 +1155,17 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:463:28: ( (kw= 'AND' | kw= 'OR' ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:464:1: (kw= 'AND' | kw= 'OR' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:512:28: ( (kw= 'AND' | kw= 'OR' ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:513:1: (kw= 'AND' | kw= 'OR' )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:464:1: (kw= 'AND' | kw= 'OR' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:513:1: (kw= 'AND' | kw= 'OR' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==23) ) {
+            if ( (LA6_0==26) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==24) ) {
+            else if ( (LA6_0==27) ) {
                 alt6=2;
             }
             else {
@@ -1053,9 +1176,9 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:465:2: kw= 'AND'
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:514:2: kw= 'AND'
                     {
-                    kw=(Token)match(input,23,FOLLOW_23_in_ruleConjunction926); 
+                    kw=(Token)match(input,26,FOLLOW_26_in_ruleConjunction1022); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getConjunctionAccess().getANDKeyword_0()); 
@@ -1064,9 +1187,9 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:472:2: kw= 'OR'
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:521:2: kw= 'OR'
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleConjunction945); 
+                    kw=(Token)match(input,27,FOLLOW_27_in_ruleConjunction1041); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getConjunctionAccess().getORKeyword_1()); 
@@ -1095,7 +1218,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCOMPARE"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:485:1: entryRuleCOMPARE returns [String current=null] : iv_ruleCOMPARE= ruleCOMPARE EOF ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:534:1: entryRuleCOMPARE returns [String current=null] : iv_ruleCOMPARE= ruleCOMPARE EOF ;
     public final String entryRuleCOMPARE() throws RecognitionException {
         String current = null;
 
@@ -1103,17 +1226,17 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:486:2: (iv_ruleCOMPARE= ruleCOMPARE EOF )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:487:2: iv_ruleCOMPARE= ruleCOMPARE EOF
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:535:2: (iv_ruleCOMPARE= ruleCOMPARE EOF )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:536:2: iv_ruleCOMPARE= ruleCOMPARE EOF
             {
              newCompositeNode(grammarAccess.getCOMPARERule()); 
-            pushFollow(FOLLOW_ruleCOMPARE_in_entryRuleCOMPARE986);
+            pushFollow(FOLLOW_ruleCOMPARE_in_entryRuleCOMPARE1082);
             iv_ruleCOMPARE=ruleCOMPARE();
 
             state._fsp--;
 
              current =iv_ruleCOMPARE.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCOMPARE997); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCOMPARE1093); 
 
             }
 
@@ -1131,7 +1254,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCOMPARE"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:494:1: ruleCOMPARE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN ) ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:543:1: ruleCOMPARE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN | this_LESS_EQUAL_4= RULE_LESS_EQUAL | this_MORE_EQUAL_5= RULE_MORE_EQUAL | this_LIKE_6= RULE_LIKE ) ;
     public final AntlrDatatypeRuleToken ruleCOMPARE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1139,15 +1262,18 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
         Token this_NOT_EQUALS_1=null;
         Token this_LESS_THAN_2=null;
         Token this_MORE_THAN_3=null;
+        Token this_LESS_EQUAL_4=null;
+        Token this_MORE_EQUAL_5=null;
+        Token this_LIKE_6=null;
 
          enterRule(); 
             
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:497:28: ( (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:498:1: (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:546:28: ( (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN | this_LESS_EQUAL_4= RULE_LESS_EQUAL | this_MORE_EQUAL_5= RULE_MORE_EQUAL | this_LIKE_6= RULE_LIKE ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:547:1: (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN | this_LESS_EQUAL_4= RULE_LESS_EQUAL | this_MORE_EQUAL_5= RULE_MORE_EQUAL | this_LIKE_6= RULE_LIKE )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:498:1: (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN )
-            int alt7=4;
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:547:1: (this_EQUALS_0= RULE_EQUALS | this_NOT_EQUALS_1= RULE_NOT_EQUALS | this_LESS_THAN_2= RULE_LESS_THAN | this_MORE_THAN_3= RULE_MORE_THAN | this_LESS_EQUAL_4= RULE_LESS_EQUAL | this_MORE_EQUAL_5= RULE_MORE_EQUAL | this_LIKE_6= RULE_LIKE )
+            int alt7=7;
             switch ( input.LA(1) ) {
             case RULE_EQUALS:
                 {
@@ -1169,6 +1295,21 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                 alt7=4;
                 }
                 break;
+            case RULE_LESS_EQUAL:
+                {
+                alt7=5;
+                }
+                break;
+            case RULE_MORE_EQUAL:
+                {
+                alt7=6;
+                }
+                break;
+            case RULE_LIKE:
+                {
+                alt7=7;
+                }
+                break;
             default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 7, 0, input);
@@ -1178,9 +1319,9 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:498:6: this_EQUALS_0= RULE_EQUALS
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:547:6: this_EQUALS_0= RULE_EQUALS
                     {
-                    this_EQUALS_0=(Token)match(input,RULE_EQUALS,FOLLOW_RULE_EQUALS_in_ruleCOMPARE1037); 
+                    this_EQUALS_0=(Token)match(input,RULE_EQUALS,FOLLOW_RULE_EQUALS_in_ruleCOMPARE1133); 
 
                     		current.merge(this_EQUALS_0);
                         
@@ -1191,9 +1332,9 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:506:10: this_NOT_EQUALS_1= RULE_NOT_EQUALS
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:555:10: this_NOT_EQUALS_1= RULE_NOT_EQUALS
                     {
-                    this_NOT_EQUALS_1=(Token)match(input,RULE_NOT_EQUALS,FOLLOW_RULE_NOT_EQUALS_in_ruleCOMPARE1063); 
+                    this_NOT_EQUALS_1=(Token)match(input,RULE_NOT_EQUALS,FOLLOW_RULE_NOT_EQUALS_in_ruleCOMPARE1159); 
 
                     		current.merge(this_NOT_EQUALS_1);
                         
@@ -1204,9 +1345,9 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:514:10: this_LESS_THAN_2= RULE_LESS_THAN
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:563:10: this_LESS_THAN_2= RULE_LESS_THAN
                     {
-                    this_LESS_THAN_2=(Token)match(input,RULE_LESS_THAN,FOLLOW_RULE_LESS_THAN_in_ruleCOMPARE1089); 
+                    this_LESS_THAN_2=(Token)match(input,RULE_LESS_THAN,FOLLOW_RULE_LESS_THAN_in_ruleCOMPARE1185); 
 
                     		current.merge(this_LESS_THAN_2);
                         
@@ -1217,14 +1358,53 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:522:10: this_MORE_THAN_3= RULE_MORE_THAN
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:571:10: this_MORE_THAN_3= RULE_MORE_THAN
                     {
-                    this_MORE_THAN_3=(Token)match(input,RULE_MORE_THAN,FOLLOW_RULE_MORE_THAN_in_ruleCOMPARE1115); 
+                    this_MORE_THAN_3=(Token)match(input,RULE_MORE_THAN,FOLLOW_RULE_MORE_THAN_in_ruleCOMPARE1211); 
 
                     		current.merge(this_MORE_THAN_3);
                         
                      
                         newLeafNode(this_MORE_THAN_3, grammarAccess.getCOMPAREAccess().getMORE_THANTerminalRuleCall_3()); 
+                        
+
+                    }
+                    break;
+                case 5 :
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:579:10: this_LESS_EQUAL_4= RULE_LESS_EQUAL
+                    {
+                    this_LESS_EQUAL_4=(Token)match(input,RULE_LESS_EQUAL,FOLLOW_RULE_LESS_EQUAL_in_ruleCOMPARE1237); 
+
+                    		current.merge(this_LESS_EQUAL_4);
+                        
+                     
+                        newLeafNode(this_LESS_EQUAL_4, grammarAccess.getCOMPAREAccess().getLESS_EQUALTerminalRuleCall_4()); 
+                        
+
+                    }
+                    break;
+                case 6 :
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:587:10: this_MORE_EQUAL_5= RULE_MORE_EQUAL
+                    {
+                    this_MORE_EQUAL_5=(Token)match(input,RULE_MORE_EQUAL,FOLLOW_RULE_MORE_EQUAL_in_ruleCOMPARE1263); 
+
+                    		current.merge(this_MORE_EQUAL_5);
+                        
+                     
+                        newLeafNode(this_MORE_EQUAL_5, grammarAccess.getCOMPAREAccess().getMORE_EQUALTerminalRuleCall_5()); 
+                        
+
+                    }
+                    break;
+                case 7 :
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:595:10: this_LIKE_6= RULE_LIKE
+                    {
+                    this_LIKE_6=(Token)match(input,RULE_LIKE,FOLLOW_RULE_LIKE_in_ruleCOMPARE1289); 
+
+                    		current.merge(this_LIKE_6);
+                        
+                     
+                        newLeafNode(this_LIKE_6, grammarAccess.getCOMPAREAccess().getLIKETerminalRuleCall_6()); 
                         
 
                     }
@@ -1250,7 +1430,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVALUE"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:537:1: entryRuleVALUE returns [String current=null] : iv_ruleVALUE= ruleVALUE EOF ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:610:1: entryRuleVALUE returns [String current=null] : iv_ruleVALUE= ruleVALUE EOF ;
     public final String entryRuleVALUE() throws RecognitionException {
         String current = null;
 
@@ -1258,17 +1438,17 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:538:2: (iv_ruleVALUE= ruleVALUE EOF )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:539:2: iv_ruleVALUE= ruleVALUE EOF
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:611:2: (iv_ruleVALUE= ruleVALUE EOF )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:612:2: iv_ruleVALUE= ruleVALUE EOF
             {
              newCompositeNode(grammarAccess.getVALUERule()); 
-            pushFollow(FOLLOW_ruleVALUE_in_entryRuleVALUE1161);
+            pushFollow(FOLLOW_ruleVALUE_in_entryRuleVALUE1335);
             iv_ruleVALUE=ruleVALUE();
 
             state._fsp--;
 
              current =iv_ruleVALUE.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVALUE1172); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVALUE1346); 
 
             }
 
@@ -1286,7 +1466,7 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVALUE"
-    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:546:1: ruleVALUE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING ) ;
+    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:619:1: ruleVALUE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING ) ;
     public final AntlrDatatypeRuleToken ruleVALUE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1296,10 +1476,10 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:549:28: ( (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:550:1: (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:622:28: ( (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:623:1: (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:550:1: (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:623:1: (this_INT_0= RULE_INT | this_STRING_1= RULE_STRING )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1317,9 +1497,9 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:550:6: this_INT_0= RULE_INT
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:623:6: this_INT_0= RULE_INT
                     {
-                    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleVALUE1212); 
+                    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleVALUE1386); 
 
                     		current.merge(this_INT_0);
                         
@@ -1330,9 +1510,9 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:558:10: this_STRING_1= RULE_STRING
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:631:10: this_STRING_1= RULE_STRING
                     {
-                    this_STRING_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleVALUE1238); 
+                    this_STRING_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleVALUE1412); 
 
                     		current.merge(this_STRING_1);
                         
@@ -1368,51 +1548,57 @@ public class InternalSQLQueryParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleModel122 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_ruleColumnList_in_ruleModel143 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleModel155 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_ruleDatabase_in_ruleModel176 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_18_in_ruleModel122 = new BitSet(new long[]{0x0000000001000010L});
+    public static final BitSet FOLLOW_ruleColumnList_in_ruleModel143 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleModel155 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_ruleDatabase_in_ruleModel176 = new BitSet(new long[]{0x0000000002000002L});
     public static final BitSet FOLLOW_ruleQueryCondition_in_ruleModel197 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDatabase_in_entryRuleDatabase234 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDatabase244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleDatabase281 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDatabase298 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_18_in_ruleDatabase316 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDatabase333 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleDatabase352 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDatabase369 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleDatabase386 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_20_in_ruleDatabase281 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDatabase298 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_21_in_ruleDatabase316 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleDatabase333 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleDatabase352 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDatabase369 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleDatabase386 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleDatabase403 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleColumnList_in_entryRuleColumnList445 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleColumnList456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleColumnList497 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_20_in_ruleColumnList516 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleColumnList531 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_21_in_ruleColumnList558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleColumnList497 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_23_in_ruleColumnList516 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleColumnList531 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_24_in_ruleColumnList558 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQueryCondition_in_entryRuleQueryCondition598 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQueryCondition608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleQueryCondition645 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleQueryCondition666 = new BitSet(new long[]{0x0000000001800002L});
-    public static final BitSet FOLLOW_ruleConjunction_in_ruleQueryCondition683 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleQueryCondition703 = new BitSet(new long[]{0x0000000001800002L});
-    public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition741 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCondition751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCondition793 = new BitSet(new long[]{0x00000000000003C0L});
-    public static final BitSet FOLLOW_ruleCOMPARE_in_ruleCondition819 = new BitSet(new long[]{0x0000000000000420L});
-    public static final BitSet FOLLOW_ruleVALUE_in_ruleCondition840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConjunction_in_entryRuleConjunction877 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConjunction888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleConjunction926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleConjunction945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCOMPARE_in_entryRuleCOMPARE986 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCOMPARE997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EQUALS_in_ruleCOMPARE1037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NOT_EQUALS_in_ruleCOMPARE1063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LESS_THAN_in_ruleCOMPARE1089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MORE_THAN_in_ruleCOMPARE1115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVALUE_in_entryRuleVALUE1161 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVALUE1172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleVALUE1212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleVALUE1238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleQueryCondition645 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleCondition_in_ruleQueryCondition666 = new BitSet(new long[]{0x000000000C000002L});
+    public static final BitSet FOLLOW_ruleFollowCondition_in_ruleQueryCondition687 = new BitSet(new long[]{0x000000000C000002L});
+    public static final BitSet FOLLOW_ruleFollowCondition_in_entryRuleFollowCondition724 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFollowCondition734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConjunction_in_ruleFollowCondition780 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleCondition_in_ruleFollowCondition801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition837 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCondition847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCondition889 = new BitSet(new long[]{0x0000000000001FC0L});
+    public static final BitSet FOLLOW_ruleCOMPARE_in_ruleCondition915 = new BitSet(new long[]{0x0000000000002020L});
+    public static final BitSet FOLLOW_ruleVALUE_in_ruleCondition936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConjunction_in_entryRuleConjunction973 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConjunction984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleConjunction1022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleConjunction1041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCOMPARE_in_entryRuleCOMPARE1082 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCOMPARE1093 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EQUALS_in_ruleCOMPARE1133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NOT_EQUALS_in_ruleCOMPARE1159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LESS_THAN_in_ruleCOMPARE1185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MORE_THAN_in_ruleCOMPARE1211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LESS_EQUAL_in_ruleCOMPARE1237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MORE_EQUAL_in_ruleCOMPARE1263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LIKE_in_ruleCOMPARE1289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVALUE_in_entryRuleVALUE1335 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVALUE1346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleVALUE1386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleVALUE1412 = new BitSet(new long[]{0x0000000000000002L});
 
 }

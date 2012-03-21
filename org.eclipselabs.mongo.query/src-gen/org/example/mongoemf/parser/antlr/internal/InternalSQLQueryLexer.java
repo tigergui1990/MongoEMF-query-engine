@@ -13,27 +13,30 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSQLQueryLexer extends Lexer {
     public static final int RULE_ID=4;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int RULE_LIKE=12;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
     public static final int RULE_MORE_THAN=9;
-    public static final int RULE_ANY_OTHER=14;
+    public static final int RULE_ANY_OTHER=17;
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=12;
+    public static final int RULE_SL_COMMENT=15;
     public static final int RULE_NOT_EQUALS=7;
-    public static final int RULE_ML_COMMENT=11;
+    public static final int RULE_ML_COMMENT=14;
     public static final int T__19=19;
-    public static final int RULE_STRING=10;
-    public static final int T__16=16;
-    public static final int T__15=15;
+    public static final int RULE_STRING=13;
     public static final int T__18=18;
-    public static final int T__17=17;
+    public static final int RULE_MORE_EQUAL=11;
+    public static final int RULE_LESS_EQUAL=10;
     public static final int RULE_INT=5;
     public static final int RULE_EQUALS=6;
     public static final int RULE_LESS_THAN=8;
-    public static final int RULE_WS=13;
+    public static final int RULE_WS=16;
 
     // delegates
     // delegators
@@ -48,78 +51,16 @@ public class InternalSQLQueryLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g"; }
 
-    // $ANTLR start "T__15"
-    public final void mT__15() throws RecognitionException {
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
         try {
-            int _type = T__15;
+            int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:11:7: ( 'SELECT' )
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:11:9: 'SELECT'
             {
             match("SELECT"); 
 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__15"
-
-    // $ANTLR start "T__16"
-    public final void mT__16() throws RecognitionException {
-        try {
-            int _type = T__16;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:12:7: ( 'FROM' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:12:9: 'FROM'
-            {
-            match("FROM"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__16"
-
-    // $ANTLR start "T__17"
-    public final void mT__17() throws RecognitionException {
-        try {
-            int _type = T__17;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:13:7: ( 'mongo://' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:13:9: 'mongo://'
-            {
-            match("mongo://"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__17"
-
-    // $ANTLR start "T__18"
-    public final void mT__18() throws RecognitionException {
-        try {
-            int _type = T__18;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:14:7: ( ':' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:14:9: ':'
-            {
-            match(':'); 
 
             }
 
@@ -136,10 +77,11 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:15:7: ( '/' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:15:9: '/'
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:12:7: ( 'FROM' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:12:9: 'FROM'
             {
-            match('/'); 
+            match("FROM"); 
+
 
             }
 
@@ -156,10 +98,11 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:16:7: ( ',' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:16:9: ','
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:13:7: ( 'mongo://' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:13:9: 'mongo://'
             {
-            match(','); 
+            match("mongo://"); 
+
 
             }
 
@@ -176,10 +119,10 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:17:7: ( '*' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:17:9: '*'
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:14:7: ( ':' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:14:9: ':'
             {
-            match('*'); 
+            match(':'); 
 
             }
 
@@ -196,11 +139,10 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:18:7: ( 'WHERE' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:18:9: 'WHERE'
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:15:7: ( '/' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:15:9: '/'
             {
-            match("WHERE"); 
-
+            match('/'); 
 
             }
 
@@ -217,11 +159,10 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:19:7: ( 'AND' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:19:9: 'AND'
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:16:7: ( ',' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:16:9: ','
             {
-            match("AND"); 
-
+            match(','); 
 
             }
 
@@ -238,6 +179,68 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:17:7: ( '*' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:17:9: '*'
+            {
+            match('*'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__24"
+
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
+        try {
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:18:7: ( 'WHERE' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:18:9: 'WHERE'
+            {
+            match("WHERE"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__25"
+
+    // $ANTLR start "T__26"
+    public final void mT__26() throws RecognitionException {
+        try {
+            int _type = T__26;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:19:7: ( 'AND' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:19:9: 'AND'
+            {
+            match("AND"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__26"
+
+    // $ANTLR start "T__27"
+    public final void mT__27() throws RecognitionException {
+        try {
+            int _type = T__27;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:20:7: ( 'OR' )
             // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:20:9: 'OR'
             {
@@ -252,15 +255,15 @@ public class InternalSQLQueryLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__24"
+    // $ANTLR end "T__27"
 
     // $ANTLR start "RULE_EQUALS"
     public final void mRULE_EQUALS() throws RecognitionException {
         try {
             int _type = RULE_EQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:572:13: ( '=' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:572:15: '='
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:645:13: ( '=' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:645:15: '='
             {
             match('='); 
 
@@ -279,10 +282,10 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_NOT_EQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:574:17: ( ( '!=' | '<>' ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:574:19: ( '!=' | '<>' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:647:17: ( ( '!=' | '<>' ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:647:19: ( '!=' | '<>' )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:574:19: ( '!=' | '<>' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:647:19: ( '!=' | '<>' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -300,7 +303,7 @@ public class InternalSQLQueryLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:574:20: '!='
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:647:20: '!='
                     {
                     match("!="); 
 
@@ -308,7 +311,7 @@ public class InternalSQLQueryLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:574:25: '<>'
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:647:25: '<>'
                     {
                     match("<>"); 
 
@@ -334,8 +337,8 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_LESS_THAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:576:16: ( '<' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:576:18: '<'
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:649:16: ( '<' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:649:18: '<'
             {
             match('<'); 
 
@@ -349,13 +352,55 @@ public class InternalSQLQueryLexer extends Lexer {
     }
     // $ANTLR end "RULE_LESS_THAN"
 
+    // $ANTLR start "RULE_LESS_EQUAL"
+    public final void mRULE_LESS_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_LESS_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:651:17: ( '<=' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:651:19: '<='
+            {
+            match("<="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_LESS_EQUAL"
+
+    // $ANTLR start "RULE_MORE_EQUAL"
+    public final void mRULE_MORE_EQUAL() throws RecognitionException {
+        try {
+            int _type = RULE_MORE_EQUAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:653:17: ( '>=' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:653:19: '>='
+            {
+            match(">="); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_MORE_EQUAL"
+
     // $ANTLR start "RULE_MORE_THAN"
     public final void mRULE_MORE_THAN() throws RecognitionException {
         try {
             int _type = RULE_MORE_THAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:578:16: ( '>' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:578:18: '>'
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:655:16: ( '>' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:655:18: '>'
             {
             match('>'); 
 
@@ -369,15 +414,36 @@ public class InternalSQLQueryLexer extends Lexer {
     }
     // $ANTLR end "RULE_MORE_THAN"
 
+    // $ANTLR start "RULE_LIKE"
+    public final void mRULE_LIKE() throws RecognitionException {
+        try {
+            int _type = RULE_LIKE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:657:11: ( 'LIKE' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:657:13: 'LIKE'
+            {
+            match("LIKE"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_LIKE"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:580:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:580:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:659:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:659:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:580:11: ( '^' )?
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:659:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -386,7 +452,7 @@ public class InternalSQLQueryLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:580:11: '^'
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:659:11: '^'
                     {
                     match('^'); 
 
@@ -404,7 +470,7 @@ public class InternalSQLQueryLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:580:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:659:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -453,10 +519,10 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:582:10: ( ( '0' .. '9' )+ )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:582:12: ( '0' .. '9' )+
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:661:10: ( ( '0' .. '9' )+ )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:661:12: ( '0' .. '9' )+
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:582:12: ( '0' .. '9' )+
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:661:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -470,7 +536,7 @@ public class InternalSQLQueryLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:582:13: '0' .. '9'
+            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:661:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -502,10 +568,10 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -523,10 +589,10 @@ public class InternalSQLQueryLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -542,7 +608,7 @@ public class InternalSQLQueryLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -558,7 +624,7 @@ public class InternalSQLQueryLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -583,10 +649,10 @@ public class InternalSQLQueryLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -602,7 +668,7 @@ public class InternalSQLQueryLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -618,7 +684,7 @@ public class InternalSQLQueryLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:584:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:663:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -661,12 +727,12 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:586:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:586:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:665:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:665:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:586:24: ( options {greedy=false; } : . )*
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:665:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -691,7 +757,7 @@ public class InternalSQLQueryLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:586:52: .
+            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:665:52: .
             	    {
             	    matchAny(); 
 
@@ -721,12 +787,12 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -739,7 +805,7 @@ public class InternalSQLQueryLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -759,7 +825,7 @@ public class InternalSQLQueryLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:40: ( ( '\\r' )? '\\n' )?
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -768,9 +834,9 @@ public class InternalSQLQueryLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:41: ( '\\r' )? '\\n'
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:41: ( '\\r' )?
+                    // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -779,7 +845,7 @@ public class InternalSQLQueryLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:588:41: '\\r'
+                            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:667:41: '\\r'
                             {
                             match('\r'); 
 
@@ -811,10 +877,10 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:590:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:590:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:669:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:590:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -868,8 +934,8 @@ public class InternalSQLQueryLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:592:16: ( . )
-            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:592:18: .
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:671:16: ( . )
+            // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:671:18: .
             {
             matchAny(); 
 
@@ -884,77 +950,77 @@ public class InternalSQLQueryLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_EQUALS | RULE_NOT_EQUALS | RULE_LESS_THAN | RULE_MORE_THAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13=21;
+        // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:8: ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_EQUALS | RULE_NOT_EQUALS | RULE_LESS_THAN | RULE_LESS_EQUAL | RULE_MORE_EQUAL | RULE_MORE_THAN | RULE_LIKE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=24;
         alt13 = dfa13.predict(input);
         switch (alt13) {
             case 1 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:10: T__15
-                {
-                mT__15(); 
-
-                }
-                break;
-            case 2 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:16: T__16
-                {
-                mT__16(); 
-
-                }
-                break;
-            case 3 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:22: T__17
-                {
-                mT__17(); 
-
-                }
-                break;
-            case 4 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:28: T__18
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:10: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 5 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:34: T__19
+            case 2 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:16: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 6 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:40: T__20
+            case 3 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:22: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 7 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:46: T__21
+            case 4 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:28: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 8 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:52: T__22
+            case 5 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:34: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 9 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:58: T__23
+            case 6 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:40: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 10 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:64: T__24
+            case 7 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:46: T__24
                 {
                 mT__24(); 
+
+                }
+                break;
+            case 8 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:52: T__25
+                {
+                mT__25(); 
+
+                }
+                break;
+            case 9 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:58: T__26
+                {
+                mT__26(); 
+
+                }
+                break;
+            case 10 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:64: T__27
+                {
+                mT__27(); 
 
                 }
                 break;
@@ -980,56 +1046,77 @@ public class InternalSQLQueryLexer extends Lexer {
                 }
                 break;
             case 14 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:113: RULE_MORE_THAN
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:113: RULE_LESS_EQUAL
+                {
+                mRULE_LESS_EQUAL(); 
+
+                }
+                break;
+            case 15 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:129: RULE_MORE_EQUAL
+                {
+                mRULE_MORE_EQUAL(); 
+
+                }
+                break;
+            case 16 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:145: RULE_MORE_THAN
                 {
                 mRULE_MORE_THAN(); 
 
                 }
                 break;
-            case 15 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:128: RULE_ID
+            case 17 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:160: RULE_LIKE
+                {
+                mRULE_LIKE(); 
+
+                }
+                break;
+            case 18 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:170: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 16 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:136: RULE_INT
+            case 19 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:178: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 17 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:145: RULE_STRING
+            case 20 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:187: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 18 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:157: RULE_ML_COMMENT
+            case 21 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:199: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 19 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:173: RULE_SL_COMMENT
+            case 22 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:215: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:189: RULE_WS
+            case 23 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:231: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:197: RULE_ANY_OTHER
+            case 24 :
+                // ../org.eclipselabs.mongo.query/src-gen/org/example/mongoemf/parser/antlr/internal/InternalSQLQuery.g:1:239: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1043,93 +1130,100 @@ public class InternalSQLQueryLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\1\uffff\3\27\1\uffff\1\35\2\uffff\3\27\1\uffff\1\25\1\45\1\uffff"+
-        "\1\25\2\uffff\2\25\2\uffff\1\27\1\uffff\2\27\6\uffff\2\27\1\57\7"+
-        "\uffff\4\27\1\64\1\uffff\1\27\1\66\2\27\1\uffff\1\27\1\uffff\1\27"+
-        "\1\73\1\74\3\uffff";
+        "\1\uffff\3\30\1\uffff\1\36\2\uffff\3\30\1\uffff\1\26\1\47\1\51"+
+        "\1\30\1\26\2\uffff\2\26\2\uffff\1\30\1\uffff\2\30\6\uffff\2\30\1"+
+        "\63\6\uffff\1\30\3\uffff\4\30\1\71\1\uffff\2\30\1\74\2\30\1\uffff"+
+        "\1\77\1\30\1\uffff\1\30\1\102\1\uffff\1\103\3\uffff";
     static final String DFA13_eofS =
-        "\75\uffff";
+        "\104\uffff";
     static final String DFA13_minS =
         "\1\0\1\105\1\122\1\157\1\uffff\1\52\2\uffff\1\110\1\116\1\122\1"+
-        "\uffff\1\75\1\76\1\uffff\1\101\2\uffff\2\0\2\uffff\1\114\1\uffff"+
-        "\1\117\1\156\6\uffff\1\105\1\104\1\60\7\uffff\1\105\1\115\1\147"+
-        "\1\122\1\60\1\uffff\1\103\1\60\1\157\1\105\1\uffff\1\124\1\uffff"+
-        "\1\72\2\60\3\uffff";
+        "\uffff\3\75\1\111\1\101\2\uffff\2\0\2\uffff\1\114\1\uffff\1\117"+
+        "\1\156\6\uffff\1\105\1\104\1\60\6\uffff\1\113\3\uffff\1\105\1\115"+
+        "\1\147\1\122\1\60\1\uffff\1\105\1\103\1\60\1\157\1\105\1\uffff\1"+
+        "\60\1\124\1\uffff\1\72\1\60\1\uffff\1\60\3\uffff";
     static final String DFA13_maxS =
         "\1\uffff\1\105\1\122\1\157\1\uffff\1\57\2\uffff\1\110\1\116\1\122"+
-        "\1\uffff\1\75\1\76\1\uffff\1\172\2\uffff\2\uffff\2\uffff\1\114\1"+
-        "\uffff\1\117\1\156\6\uffff\1\105\1\104\1\172\7\uffff\1\105\1\115"+
-        "\1\147\1\122\1\172\1\uffff\1\103\1\172\1\157\1\105\1\uffff\1\124"+
-        "\1\uffff\1\72\2\172\3\uffff";
+        "\1\uffff\1\75\1\76\1\75\1\111\1\172\2\uffff\2\uffff\2\uffff\1\114"+
+        "\1\uffff\1\117\1\156\6\uffff\1\105\1\104\1\172\6\uffff\1\113\3\uffff"+
+        "\1\105\1\115\1\147\1\122\1\172\1\uffff\1\105\1\103\1\172\1\157\1"+
+        "\105\1\uffff\1\172\1\124\1\uffff\1\72\1\172\1\uffff\1\172\3\uffff";
     static final String DFA13_acceptS =
-        "\4\uffff\1\4\1\uffff\1\6\1\7\3\uffff\1\13\2\uffff\1\16\1\uffff"+
-        "\1\17\1\20\2\uffff\1\24\1\25\1\uffff\1\17\2\uffff\1\4\1\22\1\23"+
-        "\1\5\1\6\1\7\3\uffff\1\13\1\14\1\15\1\16\1\20\1\21\1\24\5\uffff"+
-        "\1\12\4\uffff\1\11\1\uffff\1\2\3\uffff\1\3\1\10\1\1";
+        "\4\uffff\1\4\1\uffff\1\6\1\7\3\uffff\1\13\5\uffff\1\22\1\23\2\uffff"+
+        "\1\27\1\30\1\uffff\1\22\2\uffff\1\4\1\25\1\26\1\5\1\6\1\7\3\uffff"+
+        "\1\13\1\14\1\16\1\15\1\17\1\20\1\uffff\1\23\1\24\1\27\5\uffff\1"+
+        "\12\5\uffff\1\11\2\uffff\1\2\2\uffff\1\21\1\uffff\1\3\1\10\1\1";
     static final String DFA13_specialS =
-        "\1\0\21\uffff\1\1\1\2\51\uffff}>";
+        "\1\2\22\uffff\1\1\1\0\57\uffff}>";
     static final String[] DFA13_transitionS = {
-            "\11\25\2\24\2\25\1\24\22\25\1\24\1\14\1\22\4\25\1\23\2\25\1"+
-            "\7\1\25\1\6\2\25\1\5\12\21\1\4\1\25\1\15\1\13\1\16\2\25\1\11"+
-            "\4\20\1\2\10\20\1\12\3\20\1\1\3\20\1\10\3\20\3\25\1\17\1\20"+
-            "\1\25\14\20\1\3\15\20\uff85\25",
-            "\1\26",
-            "\1\30",
+            "\11\26\2\25\2\26\1\25\22\26\1\25\1\14\1\23\4\26\1\24\2\26\1"+
+            "\7\1\26\1\6\2\26\1\5\12\22\1\4\1\26\1\15\1\13\1\16\2\26\1\11"+
+            "\4\21\1\2\5\21\1\17\2\21\1\12\3\21\1\1\3\21\1\10\3\21\3\26\1"+
+            "\20\1\21\1\26\14\21\1\3\15\21\uff85\26",
+            "\1\27",
             "\1\31",
+            "\1\32",
             "",
-            "\1\33\4\uffff\1\34",
+            "\1\34\4\uffff\1\35",
             "",
             "",
-            "\1\40",
             "\1\41",
             "\1\42",
+            "\1\43",
             "",
-            "\1\44",
-            "\1\44",
-            "",
-            "\32\27\4\uffff\1\27\1\uffff\32\27",
-            "",
-            "",
-            "\0\50",
-            "\0\50",
-            "",
-            "",
+            "\1\45",
+            "\1\46\1\45",
+            "\1\50",
             "\1\52",
-            "",
-            "\1\53",
-            "\1\54",
+            "\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
             "",
+            "\0\54",
+            "\0\54",
             "",
             "",
-            "",
-            "",
-            "\1\55",
             "\1\56",
-            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\57",
             "\1\60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\61",
             "\1\62",
-            "\1\63",
-            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\64",
+            "",
+            "",
             "",
             "\1\65",
-            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\1\66",
             "\1\67",
             "\1\70",
-            "",
-            "\1\71",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
             "\1\72",
-            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
-            "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "\1\73",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\75",
+            "\1\76",
+            "",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\100",
+            "",
+            "\1\101",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
             "",
             ""
@@ -1165,13 +1259,33 @@ public class InternalSQLQueryLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_EQUALS | RULE_NOT_EQUALS | RULE_LESS_THAN | RULE_MORE_THAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_EQUALS | RULE_NOT_EQUALS | RULE_LESS_THAN | RULE_LESS_EQUAL | RULE_MORE_EQUAL | RULE_MORE_THAN | RULE_LIKE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA13_20 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA13_20>='\u0000' && LA13_20<='\uFFFF')) ) {s = 44;}
+
+                        else s = 22;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA13_19 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA13_19>='\u0000' && LA13_19<='\uFFFF')) ) {s = 44;}
+
+                        else s = 22;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA13_0 = input.LA(1);
 
                         s = -1;
@@ -1203,39 +1317,21 @@ public class InternalSQLQueryLexer extends Lexer {
 
                         else if ( (LA13_0=='>') ) {s = 14;}
 
-                        else if ( (LA13_0=='^') ) {s = 15;}
+                        else if ( (LA13_0=='L') ) {s = 15;}
 
-                        else if ( ((LA13_0>='B' && LA13_0<='E')||(LA13_0>='G' && LA13_0<='N')||(LA13_0>='P' && LA13_0<='R')||(LA13_0>='T' && LA13_0<='V')||(LA13_0>='X' && LA13_0<='Z')||LA13_0=='_'||(LA13_0>='a' && LA13_0<='l')||(LA13_0>='n' && LA13_0<='z')) ) {s = 16;}
+                        else if ( (LA13_0=='^') ) {s = 16;}
 
-                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 17;}
+                        else if ( ((LA13_0>='B' && LA13_0<='E')||(LA13_0>='G' && LA13_0<='K')||(LA13_0>='M' && LA13_0<='N')||(LA13_0>='P' && LA13_0<='R')||(LA13_0>='T' && LA13_0<='V')||(LA13_0>='X' && LA13_0<='Z')||LA13_0=='_'||(LA13_0>='a' && LA13_0<='l')||(LA13_0>='n' && LA13_0<='z')) ) {s = 17;}
 
-                        else if ( (LA13_0=='\"') ) {s = 18;}
+                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 18;}
 
-                        else if ( (LA13_0=='\'') ) {s = 19;}
+                        else if ( (LA13_0=='\"') ) {s = 19;}
 
-                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 20;}
+                        else if ( (LA13_0=='\'') ) {s = 20;}
 
-                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='(' && LA13_0<=')')||LA13_0=='+'||(LA13_0>='-' && LA13_0<='.')||LA13_0==';'||(LA13_0>='?' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||(LA13_0>='{' && LA13_0<='\uFFFF')) ) {s = 21;}
+                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 21;}
 
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA13_18 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA13_18>='\u0000' && LA13_18<='\uFFFF')) ) {s = 40;}
-
-                        else s = 21;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA13_19 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA13_19>='\u0000' && LA13_19<='\uFFFF')) ) {s = 40;}
-
-                        else s = 21;
+                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='(' && LA13_0<=')')||LA13_0=='+'||(LA13_0>='-' && LA13_0<='.')||LA13_0==';'||(LA13_0>='?' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||(LA13_0>='{' && LA13_0<='\uFFFF')) ) {s = 22;}
 
                         if ( s>=0 ) return s;
                         break;

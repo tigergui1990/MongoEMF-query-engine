@@ -68,14 +68,24 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="WHERE"/>
-        <elements xsi:type="xtext:Assignment" feature="cond" operator="+=">
+        <elements xsi:type="xtext:Assignment" feature="startcond" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="followcond" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
         </elements>
-        <elements xsi:type="xtext:Group" cardinality="*">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
-          <elements xsi:type="xtext:Assignment" feature="cond" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
-          </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FollowCondition">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.example.org/mongoemf/SQLQuery#//FollowCondition"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="conjunction" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="cond" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
         </elements>
       </alternatives>
     </rules>
@@ -88,10 +98,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="comp" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
         </elements>
       </alternatives>
     </rules>
@@ -109,10 +119,13 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="VALUE">
@@ -145,11 +158,29 @@
       </type>
       <alternatives xsi:type="xtext:Keyword" value="&lt;"/>
     </rules>
+    <rules xsi:type="xtext:TerminalRule" name="LESS_EQUAL">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Keyword" value="&lt;="/>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="MORE_EQUAL">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Keyword" value=">="/>
+    </rules>
     <rules xsi:type="xtext:TerminalRule" name="MORE_THAN">
       <type metamodel="/1/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Keyword" value=">"/>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="LIKE">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Keyword" value="LIKE"/>
     </rules>
   </xtext:Grammar>
   <xtext:Grammar name="org.eclipse.xtext.common.Terminals" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /1/@rules.3 /1/@rules.4">

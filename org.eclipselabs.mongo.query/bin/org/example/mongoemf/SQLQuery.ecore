@@ -17,7 +17,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QueryCondition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" upperBound="-1" eType="#//Condition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startcond" eType="#//Condition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="followcond" upperBound="-1"
+        eType="#//FollowCondition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FollowCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conjunction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" eType="#//Condition"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition">

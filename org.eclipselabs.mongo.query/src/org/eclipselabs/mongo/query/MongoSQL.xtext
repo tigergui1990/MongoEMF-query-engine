@@ -23,7 +23,11 @@ ColumnList:
 
 QueryCondition:
 	'WHERE'
-	cond+=Condition (Conjunction cond+=Condition)*
+	startcond=Condition (followcond+=FollowCondition)*
+;
+
+FollowCondition:
+	conjunction=Conjunction cond=Condition
 ;
 
 Condition:
@@ -40,6 +44,9 @@ COMPARE:
 	|NOT_EQUALS
 	|LESS_THAN
 	|MORE_THAN
+	|LESS_EQUAL
+	|MORE_EQUAL
+	|LIKE
 ;
 
 VALUE:
@@ -50,5 +57,7 @@ VALUE:
 terminal EQUALS:'=';
 terminal NOT_EQUALS:'!='|'<>';
 terminal LESS_THAN:'<' ;
+terminal LESS_EQUAL:'<=';
+terminal MORE_EQUAL:'>=';
 terminal MORE_THAN:'>' ;
-
+terminal LIKE:'LIKE';

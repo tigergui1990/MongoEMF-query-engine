@@ -23,16 +23,9 @@ public class AbstractSQLQuerySyntacticSequencer extends AbstractSyntacticSequenc
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getConjunctionRule())
-			return getConjunctionToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	protected String getConjunctionToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "AND";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

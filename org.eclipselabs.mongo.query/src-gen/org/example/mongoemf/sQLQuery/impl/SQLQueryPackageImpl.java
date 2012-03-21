@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.example.mongoemf.sQLQuery.Condition;
 import org.example.mongoemf.sQLQuery.Database;
+import org.example.mongoemf.sQLQuery.FollowCondition;
 import org.example.mongoemf.sQLQuery.Model;
 import org.example.mongoemf.sQLQuery.QueryCondition;
 import org.example.mongoemf.sQLQuery.SQLQueryFactory;
@@ -48,6 +49,13 @@ public class SQLQueryPackageImpl extends EPackageImpl implements SQLQueryPackage
    * @generated
    */
   private EClass queryConditionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass followConditionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -224,9 +232,49 @@ public class SQLQueryPackageImpl extends EPackageImpl implements SQLQueryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQueryCondition_Cond()
+  public EReference getQueryCondition_Startcond()
   {
     return (EReference)queryConditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getQueryCondition_Followcond()
+  {
+    return (EReference)queryConditionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFollowCondition()
+  {
+    return followConditionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFollowCondition_Conjunction()
+  {
+    return (EAttribute)followConditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFollowCondition_Cond()
+  {
+    return (EReference)followConditionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -311,7 +359,12 @@ public class SQLQueryPackageImpl extends EPackageImpl implements SQLQueryPackage
     createEAttribute(databaseEClass, DATABASE__NAME);
 
     queryConditionEClass = createEClass(QUERY_CONDITION);
-    createEReference(queryConditionEClass, QUERY_CONDITION__COND);
+    createEReference(queryConditionEClass, QUERY_CONDITION__STARTCOND);
+    createEReference(queryConditionEClass, QUERY_CONDITION__FOLLOWCOND);
+
+    followConditionEClass = createEClass(FOLLOW_CONDITION);
+    createEAttribute(followConditionEClass, FOLLOW_CONDITION__CONJUNCTION);
+    createEReference(followConditionEClass, FOLLOW_CONDITION__COND);
 
     conditionEClass = createEClass(CONDITION);
     createEAttribute(conditionEClass, CONDITION__NAME);
@@ -362,7 +415,12 @@ public class SQLQueryPackageImpl extends EPackageImpl implements SQLQueryPackage
     initEAttribute(getDatabase_Name(), ecorePackage.getEString(), "name", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryConditionEClass, QueryCondition.class, "QueryCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getQueryCondition_Cond(), this.getCondition(), null, "cond", null, 0, -1, QueryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQueryCondition_Startcond(), this.getCondition(), null, "startcond", null, 0, 1, QueryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQueryCondition_Followcond(), this.getFollowCondition(), null, "followcond", null, 0, -1, QueryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(followConditionEClass, FollowCondition.class, "FollowCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFollowCondition_Conjunction(), ecorePackage.getEString(), "conjunction", null, 0, 1, FollowCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFollowCondition_Cond(), this.getCondition(), null, "cond", null, 0, 1, FollowCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCondition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

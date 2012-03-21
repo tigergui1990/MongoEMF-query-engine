@@ -54,6 +54,15 @@ public interface SQLQueryFactory extends EFactory
   QueryCondition createQueryCondition();
 
   /**
+   * Returns a new object of class '<em>Follow Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follow Condition</em>'.
+   * @generated
+   */
+  FollowCondition createFollowCondition();
+
+  /**
    * Returns a new object of class '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

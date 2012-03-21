@@ -324,13 +324,88 @@ ruleQueryCondition returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getQueryConditionAccess().getCondConditionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getQueryConditionAccess().getStartcondConditionParserRuleCall_1_0()); 
 	    }
-		lv_cond_1_0=ruleCondition		{
+		lv_startcond_1_0=ruleCondition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getQueryConditionRule());
+	        }
+       		set(
+       			$current, 
+       			"startcond",
+        		lv_startcond_1_0, 
+        		"Condition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getQueryConditionAccess().getFollowcondFollowConditionParserRuleCall_2_0()); 
+	    }
+		lv_followcond_2_0=ruleFollowCondition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getQueryConditionRule());
 	        }
        		add(
+       			$current, 
+       			"followcond",
+        		lv_followcond_2_0, 
+        		"FollowCondition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
+;
+
+
+
+
+
+// Entry rule entryRuleFollowCondition
+entryRuleFollowCondition returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFollowConditionRule()); }
+	 iv_ruleFollowCondition=ruleFollowCondition 
+	 { $current=$iv_ruleFollowCondition.current; } 
+	 EOF 
+;
+
+// Rule FollowCondition
+ruleFollowCondition returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFollowConditionAccess().getConjunctionConjunctionParserRuleCall_0_0()); 
+	    }
+		lv_conjunction_0_0=ruleConjunction		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFollowConditionRule());
+	        }
+       		set(
+       			$current, 
+       			"conjunction",
+        		lv_conjunction_0_0, 
+        		"Conjunction");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFollowConditionAccess().getCondConditionParserRuleCall_1_0()); 
+	    }
+		lv_cond_1_0=ruleCondition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFollowConditionRule());
+	        }
+       		set(
        			$current, 
        			"cond",
         		lv_cond_1_0, 
@@ -339,33 +414,7 @@ ruleQueryCondition returns [EObject current=null]
 	    }
 
 )
-)(
-    { 
-        newCompositeNode(grammarAccess.getQueryConditionAccess().getConjunctionParserRuleCall_2_0()); 
-    }
-ruleConjunction
-    { 
-        afterParserOrEnumRuleCall();
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getQueryConditionAccess().getCondConditionParserRuleCall_2_1_0()); 
-	    }
-		lv_cond_3_0=ruleCondition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getQueryConditionRule());
-	        }
-       		add(
-       			$current, 
-       			"cond",
-        		lv_cond_3_0, 
-        		"Condition");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*)
+))
 ;
 
 
@@ -526,6 +575,30 @@ ruleCOMPARE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     { 
     newLeafNode(this_MORE_THAN_3, grammarAccess.getCOMPAREAccess().getMORE_THANTerminalRuleCall_3()); 
     }
+
+    |    this_LESS_EQUAL_4=RULE_LESS_EQUAL    {
+		$current.merge(this_LESS_EQUAL_4);
+    }
+
+    { 
+    newLeafNode(this_LESS_EQUAL_4, grammarAccess.getCOMPAREAccess().getLESS_EQUALTerminalRuleCall_4()); 
+    }
+
+    |    this_MORE_EQUAL_5=RULE_MORE_EQUAL    {
+		$current.merge(this_MORE_EQUAL_5);
+    }
+
+    { 
+    newLeafNode(this_MORE_EQUAL_5, grammarAccess.getCOMPAREAccess().getMORE_EQUALTerminalRuleCall_5()); 
+    }
+
+    |    this_LIKE_6=RULE_LIKE    {
+		$current.merge(this_LIKE_6);
+    }
+
+    { 
+    newLeafNode(this_LIKE_6, grammarAccess.getCOMPAREAccess().getLIKETerminalRuleCall_6()); 
+    }
 )
     ;
 
@@ -575,7 +648,13 @@ RULE_NOT_EQUALS : ('!='|'<>');
 
 RULE_LESS_THAN : '<';
 
+RULE_LESS_EQUAL : '<=';
+
+RULE_MORE_EQUAL : '>=';
+
 RULE_MORE_THAN : '>';
+
+RULE_LIKE : 'LIKE';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
