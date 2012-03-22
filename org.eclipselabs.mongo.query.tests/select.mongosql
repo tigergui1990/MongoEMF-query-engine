@@ -1,1 +1,0 @@
-SELECT id,name,age FROM mongo://localhost/tigergui/users WHERE name='Test User7' AND age>20 OR sex!='female'
