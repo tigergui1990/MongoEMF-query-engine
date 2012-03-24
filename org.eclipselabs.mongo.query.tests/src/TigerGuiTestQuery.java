@@ -89,7 +89,7 @@ public class TigerGuiTestQuery
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		Resource resource = resourceSet.createResource(URI.createURI("dummy:/example.mongosql"));
-		InputStream in = new ByteArrayInputStream("SELECT * FROM mongo://localhost:27017/tigergui/users WHERE name='Test User7' AND age>2".getBytes());
+		InputStream in = new ByteArrayInputStream("SELECT name FROM mongo://localhost:27017/tigergui/users WHERE name='Test User7' AND age>2".getBytes());
 		try {
 			resource.load(in, resourceSet.getLoadOptions());
 		} catch (IOException e) {
@@ -108,23 +108,27 @@ public class TigerGuiTestQuery
         
 		DB db = m.getDB(model.getDb().getDbName());
         DBCollection coll = db.getCollection(model.getDb().getName());
-        BasicDBObject query = (BasicDBObject) tansferModule(model);
         
-        /*EList<Condition> list = model.getQuery().getCond();
-        for(Condition cond : list)
-        	if(cond.getComp().equals("=")){
-        		String value = cond.getValue();
-        		if(value.startsWith("'")&&value.endsWith("'") || value.startsWith("\"")&&value.endsWith("\""))
-        			value =value.substring(1, value.length()-1);
-        		query.put(cond.getName(), value);
-        	}else if(cond.getComp().equals(">")){
-        		query.put(cond.getName(), new BasicDBObject("$gt", Integer.parseInt(cond.getValue())));
-        	}*/
-        //Query MongoDB by DBObject
-        DBCursor cur = coll.find(query);
+        DBObject query = tansferModule(model);
+        DBObject columns = getColumnsFromModel(model);
+        
+        DBCursor cur = coll.find(query, columns);
         while(cur.hasNext()) {
             System.out.println(cur.next());
         }
+	}
+	
+	private DBObject getColumnsFromModel(ModelImpl model){
+		DBObject columns = new BasicDBObject();
+		if(!model.getAttrs().equals("*")){
+			String[] list = model.getAttrs().split(",");
+			for(int i=0; i<list.length; i++){
+				String column = list[i].trim();
+				if(!column.isEmpty())
+					columns.put(column, i+1);
+			}
+		}
+		return columns;
 	}
 	
 	private DBObject tansferModule(ModelImpl model){
@@ -182,5 +186,30 @@ public class TigerGuiTestQuery
 		return URI.createURI("mongo://localhost/tigergui/users/").appendQuery(URI.encodeQuery(query, false));
 	}*/
 	
-	
+	public static void main(String[] args){
+		Mongo m;
+		try {
+			m = new Mongo( "localhost" , 27017 );
+			DB db = m.getDB( "tigergui" );
+			DBCollection coll = db.getCollection("users");
+			
+			DBObject query = new BasicDBObject();
+			query.put("age", new BasicDBObject("$gt", 2));
+			
+			DBObject columns = new BasicDBObject();
+			//columns.put("name", 1);
+			
+			DBCursor cur = coll.find(query, columns);
+	        while(cur.hasNext()) {
+	            System.out.println(cur.next());
+	        }
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MongoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 }
