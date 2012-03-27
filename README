@@ -1,0 +1,4 @@
+Ed Merks and Bryan Hunt have created a project called MongoEMF that allows you to persist EMF objects to MongoDB. MongoEMF has the ability to query objects based on attribute and reference values, but is lacking some functionality and robustness. This project will re-write MongoEMF's query engine using Xtext and EMF.
+
+Detailed project proposal:https://github.com/tigergui1990/MongoEMF-query-engine/wiki/XText-based-query-engine-for-MongoEMF-project-proposal
+MongoEMF:https://github.com/BryanHunt/mongo-emf
