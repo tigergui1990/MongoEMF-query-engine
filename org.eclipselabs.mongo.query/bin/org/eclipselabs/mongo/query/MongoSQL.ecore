@@ -19,6 +19,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="WhereEntry"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionWhereEntry" eSuperTypes="#//WhereEntry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleExpressionWhereEntry" eSuperTypes="#//ExpressionWhereEntry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//Operator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//Expression"
         containment="true"/>
@@ -44,6 +46,43 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="true" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiExpressionWhereEntry" eSuperTypes="#//ExpressionWhereEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//ArrayOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//ArrayExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DoubleArrayExpression" eSuperTypes="#//ArrayExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LongArrayExpression" eSuperTypes="#//ArrayExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringArrayExpression" eSuperTypes="#//ArrayExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NullArrayExpression" eSuperTypes="#//ArrayExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateArrayExpression" eSuperTypes="#//ArrayExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanArrayExpression" eSuperTypes="#//ArrayExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ArrayOperator">
+    <eLiterals name="mongo_all" literal="$all"/>
+    <eLiterals name="mongo_in" value="1" literal="$in"/>
+    <eLiterals name="sql_in" value="2" literal="in"/>
+    <eLiterals name="mongo_nin" value="3" literal="$nin"/>
+    <eLiterals name="sql_notIn" value="4" literal="not in"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Operator">
     <eLiterals name="lessThen" literal="&lt;"/>

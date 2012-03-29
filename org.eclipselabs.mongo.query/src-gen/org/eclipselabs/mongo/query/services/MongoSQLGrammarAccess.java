@@ -294,6 +294,26 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ExpressionWhereEntryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExpressionWhereEntry");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSingleExpressionWhereEntryParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMultiExpressionWhereEntryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ExpressionWhereEntry:
+		//	SingleExpressionWhereEntry | MultiExpressionWhereEntry;
+		public ParserRule getRule() { return rule; }
+
+		//SingleExpressionWhereEntry | MultiExpressionWhereEntry
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//SingleExpressionWhereEntry
+		public RuleCall getSingleExpressionWhereEntryParserRuleCall_0() { return cSingleExpressionWhereEntryParserRuleCall_0; }
+
+		//MultiExpressionWhereEntry
+		public RuleCall getMultiExpressionWhereEntryParserRuleCall_1() { return cMultiExpressionWhereEntryParserRuleCall_1; }
+	}
+
+	public class SingleExpressionWhereEntryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SingleExpressionWhereEntry");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
@@ -302,7 +322,7 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRhsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRhsExpressionParserRuleCall_2_0 = (RuleCall)cRhsAssignment_2.eContents().get(0);
 		
-		//ExpressionWhereEntry:
+		//SingleExpressionWhereEntry:
 		//	name=ID operator=Operator rhs=Expression;
 		public ParserRule getRule() { return rule; }
 
@@ -493,8 +513,398 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 		//"false"
 		public Keyword getTrueFalseKeyword_1_0() { return cTrueFalseKeyword_1_0; }
 	}
+
+	public class MultiExpressionWhereEntryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MultiExpressionWhereEntry");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOperatorArrayOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
+		private final Assignment cRhsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRhsArrayExpressionParserRuleCall_2_0 = (RuleCall)cRhsAssignment_2.eContents().get(0);
+		
+		//MultiExpressionWhereEntry:
+		//	name=ID operator=ArrayOperator rhs=ArrayExpression;
+		public ParserRule getRule() { return rule; }
+
+		//name=ID operator=ArrayOperator rhs=ArrayExpression
+		public Group getGroup() { return cGroup; }
+
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+
+		//operator=ArrayOperator
+		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
+
+		//ArrayOperator
+		public RuleCall getOperatorArrayOperatorEnumRuleCall_1_0() { return cOperatorArrayOperatorEnumRuleCall_1_0; }
+
+		//rhs=ArrayExpression
+		public Assignment getRhsAssignment_2() { return cRhsAssignment_2; }
+
+		//ArrayExpression
+		public RuleCall getRhsArrayExpressionParserRuleCall_2_0() { return cRhsArrayExpressionParserRuleCall_2_0; }
+	}
+
+	public class ArrayExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDoubleArrayExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLongArrayExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cStringArrayExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cNullArrayExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDateArrayExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cBooleanArrayExpressionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		
+		//ArrayExpression:
+		//	DoubleArrayExpression | LongArrayExpression | StringArrayExpression | NullArrayExpression | DateArrayExpression |
+		//	BooleanArrayExpression;
+		public ParserRule getRule() { return rule; }
+
+		//DoubleArrayExpression | LongArrayExpression | StringArrayExpression | NullArrayExpression | DateArrayExpression |
+		//BooleanArrayExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//DoubleArrayExpression
+		public RuleCall getDoubleArrayExpressionParserRuleCall_0() { return cDoubleArrayExpressionParserRuleCall_0; }
+
+		//LongArrayExpression
+		public RuleCall getLongArrayExpressionParserRuleCall_1() { return cLongArrayExpressionParserRuleCall_1; }
+
+		//StringArrayExpression
+		public RuleCall getStringArrayExpressionParserRuleCall_2() { return cStringArrayExpressionParserRuleCall_2; }
+
+		//NullArrayExpression
+		public RuleCall getNullArrayExpressionParserRuleCall_3() { return cNullArrayExpressionParserRuleCall_3; }
+
+		//DateArrayExpression
+		public RuleCall getDateArrayExpressionParserRuleCall_4() { return cDateArrayExpressionParserRuleCall_4; }
+
+		//BooleanArrayExpression
+		public RuleCall getBooleanArrayExpressionParserRuleCall_5() { return cBooleanArrayExpressionParserRuleCall_5; }
+	}
+
+	public class DoubleArrayExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DoubleArrayExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesSIGNED_DOUBLETerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesSIGNED_DOUBLETerminalRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//DoubleArrayExpression:
+		//	"[" values+=SIGNED_DOUBLE ("," values+=SIGNED_DOUBLE)* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" values+=SIGNED_DOUBLE ("," values+=SIGNED_DOUBLE)* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+
+		//values+=SIGNED_DOUBLE
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+
+		//SIGNED_DOUBLE
+		public RuleCall getValuesSIGNED_DOUBLETerminalRuleCall_1_0() { return cValuesSIGNED_DOUBLETerminalRuleCall_1_0; }
+
+		//("," values+=SIGNED_DOUBLE)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//values+=SIGNED_DOUBLE
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
+
+		//SIGNED_DOUBLE
+		public RuleCall getValuesSIGNED_DOUBLETerminalRuleCall_2_1_0() { return cValuesSIGNED_DOUBLETerminalRuleCall_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+
+	public class LongArrayExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LongArrayExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesSINGED_LONGTerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesSINGED_LONGTerminalRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//LongArrayExpression:
+		//	"[" values+=SINGED_LONG ("," values+=SINGED_LONG)* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" values+=SINGED_LONG ("," values+=SINGED_LONG)* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+
+		//values+=SINGED_LONG
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+
+		//SINGED_LONG
+		public RuleCall getValuesSINGED_LONGTerminalRuleCall_1_0() { return cValuesSINGED_LONGTerminalRuleCall_1_0; }
+
+		//("," values+=SINGED_LONG)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//values+=SINGED_LONG
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
+
+		//SINGED_LONG
+		public RuleCall getValuesSINGED_LONGTerminalRuleCall_2_1_0() { return cValuesSINGED_LONGTerminalRuleCall_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+
+	public class StringArrayExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringArrayExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//StringArrayExpression:
+		//	"[" values+=STRING ("," values+=STRING)* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" values+=STRING ("," values+=STRING)* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+
+		//values+=STRING
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+
+		//STRING
+		public RuleCall getValuesSTRINGTerminalRuleCall_1_0() { return cValuesSTRINGTerminalRuleCall_1_0; }
+
+		//("," values+=STRING)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//values+=STRING
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
+
+		//STRING
+		public RuleCall getValuesSTRINGTerminalRuleCall_2_1_0() { return cValuesSTRINGTerminalRuleCall_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+
+	public class NullArrayExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NullArrayExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cValuesNullKeyword_1_0 = (Keyword)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final Keyword cValuesNullKeyword_2_1_0 = (Keyword)cValuesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//NullArrayExpression:
+		//	"[" values+="null" ("," values+="null")* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" values+="null" ("," values+="null")* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+
+		//values+="null"
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+
+		//"null"
+		public Keyword getValuesNullKeyword_1_0() { return cValuesNullKeyword_1_0; }
+
+		//("," values+="null")*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//values+="null"
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
+
+		//"null"
+		public Keyword getValuesNullKeyword_2_1_0() { return cValuesNullKeyword_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+
+	public class DateArrayExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DateArrayExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesDATETerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesDATETerminalRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//DateArrayExpression:
+		//	"[" values+=DATE ("," values+=DATE)* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" values+=DATE ("," values+=DATE)* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+
+		//values+=DATE
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+
+		//DATE
+		public RuleCall getValuesDATETerminalRuleCall_1_0() { return cValuesDATETerminalRuleCall_1_0; }
+
+		//("," values+=DATE)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//values+=DATE
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
+
+		//DATE
+		public RuleCall getValuesDATETerminalRuleCall_2_1_0() { return cValuesDATETerminalRuleCall_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+
+	public class BooleanArrayExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BooleanArrayExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesBOOLTerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesBOOLTerminalRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//BooleanArrayExpression:
+		//	"[" values+=BOOL ("," values+=BOOL)* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" values+=BOOL ("," values+=BOOL)* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+
+		//values+=BOOL
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+
+		//BOOL
+		public RuleCall getValuesBOOLTerminalRuleCall_1_0() { return cValuesBOOLTerminalRuleCall_1_0; }
+
+		//("," values+=BOOL)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//values+=BOOL
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
+
+		//BOOL
+		public RuleCall getValuesBOOLTerminalRuleCall_2_1_0() { return cValuesBOOLTerminalRuleCall_2_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
 	
 	
+	public class ArrayOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMongo_allEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMongo_allAllKeyword_0_0 = (Keyword)cMongo_allEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMongo_inEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMongo_inInKeyword_1_0 = (Keyword)cMongo_inEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cSql_inEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cSql_inInKeyword_2_0 = (Keyword)cSql_inEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cMongo_ninEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cMongo_ninNinKeyword_3_0 = (Keyword)cMongo_ninEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cSql_notInEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cSql_notInNotInKeyword_4_0 = (Keyword)cSql_notInEnumLiteralDeclaration_4.eContents().get(0);
+		
+		//enum ArrayOperator:
+		//	mongo_all="$all" | mongo_in="$in" | sql_in="in" | mongo_nin="$nin" | sql_notIn="not in";
+		public EnumRule getRule() { return rule; }
+
+		//mongo_all="$all" | mongo_in="$in" | sql_in="in" | mongo_nin="$nin" | sql_notIn="not in"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//mongo_all="$all"
+		public EnumLiteralDeclaration getMongo_allEnumLiteralDeclaration_0() { return cMongo_allEnumLiteralDeclaration_0; }
+
+		//"$all"
+		public Keyword getMongo_allAllKeyword_0_0() { return cMongo_allAllKeyword_0_0; }
+
+		//mongo_in="$in"
+		public EnumLiteralDeclaration getMongo_inEnumLiteralDeclaration_1() { return cMongo_inEnumLiteralDeclaration_1; }
+
+		//"$in"
+		public Keyword getMongo_inInKeyword_1_0() { return cMongo_inInKeyword_1_0; }
+
+		//sql_in="in"
+		public EnumLiteralDeclaration getSql_inEnumLiteralDeclaration_2() { return cSql_inEnumLiteralDeclaration_2; }
+
+		//"in"
+		public Keyword getSql_inInKeyword_2_0() { return cSql_inInKeyword_2_0; }
+
+		//mongo_nin="$nin"
+		public EnumLiteralDeclaration getMongo_ninEnumLiteralDeclaration_3() { return cMongo_ninEnumLiteralDeclaration_3; }
+
+		//"$nin"
+		public Keyword getMongo_ninNinKeyword_3_0() { return cMongo_ninNinKeyword_3_0; }
+
+		//sql_notIn="not in"
+		public EnumLiteralDeclaration getSql_notInEnumLiteralDeclaration_4() { return cSql_notInEnumLiteralDeclaration_4; }
+
+		//"not in"
+		public Keyword getSql_notInNotInKeyword_4_0() { return cSql_notInNotInKeyword_4_0; }
+	}
+
 	public class OperatorElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Operator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -597,6 +1007,7 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 	private ConcreteWhereEntryElements pConcreteWhereEntry;
 	private ParWhereEntryElements pParWhereEntry;
 	private ExpressionWhereEntryElements pExpressionWhereEntry;
+	private SingleExpressionWhereEntryElements pSingleExpressionWhereEntry;
 	private ExpressionElements pExpression;
 	private ReplacableValueElements pReplacableValue;
 	private DoubleExpressionElements pDoubleExpression;
@@ -605,7 +1016,17 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 	private NullExpressionElements pNullExpression;
 	private DateExpressionElements pDateExpression;
 	private BooleanExpressionElements pBooleanExpression;
+	private MultiExpressionWhereEntryElements pMultiExpressionWhereEntry;
+	private ArrayExpressionElements pArrayExpression;
+	private DoubleArrayExpressionElements pDoubleArrayExpression;
+	private LongArrayExpressionElements pLongArrayExpression;
+	private StringArrayExpressionElements pStringArrayExpression;
+	private NullArrayExpressionElements pNullArrayExpression;
+	private DateArrayExpressionElements pDateArrayExpression;
+	private BooleanArrayExpressionElements pBooleanArrayExpression;
+	private ArrayOperatorElements unknownRuleArrayOperator;
 	private OperatorElements unknownRuleOperator;
+	private TerminalRule tBOOL;
 	private TerminalRule tSINGED_LONG;
 	private TerminalRule tDATE;
 	private TerminalRule tSIGNED_DOUBLE;
@@ -699,13 +1120,23 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ExpressionWhereEntry:
-	//	name=ID operator=Operator rhs=Expression;
+	//	SingleExpressionWhereEntry | MultiExpressionWhereEntry;
 	public ExpressionWhereEntryElements getExpressionWhereEntryAccess() {
 		return (pExpressionWhereEntry != null) ? pExpressionWhereEntry : (pExpressionWhereEntry = new ExpressionWhereEntryElements());
 	}
 	
 	public ParserRule getExpressionWhereEntryRule() {
 		return getExpressionWhereEntryAccess().getRule();
+	}
+
+	//SingleExpressionWhereEntry:
+	//	name=ID operator=Operator rhs=Expression;
+	public SingleExpressionWhereEntryElements getSingleExpressionWhereEntryAccess() {
+		return (pSingleExpressionWhereEntry != null) ? pSingleExpressionWhereEntry : (pSingleExpressionWhereEntry = new SingleExpressionWhereEntryElements());
+	}
+	
+	public ParserRule getSingleExpressionWhereEntryRule() {
+		return getSingleExpressionWhereEntryAccess().getRule();
 	}
 
 	//Expression:
@@ -789,6 +1220,97 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 		return getBooleanExpressionAccess().getRule();
 	}
 
+	//MultiExpressionWhereEntry:
+	//	name=ID operator=ArrayOperator rhs=ArrayExpression;
+	public MultiExpressionWhereEntryElements getMultiExpressionWhereEntryAccess() {
+		return (pMultiExpressionWhereEntry != null) ? pMultiExpressionWhereEntry : (pMultiExpressionWhereEntry = new MultiExpressionWhereEntryElements());
+	}
+	
+	public ParserRule getMultiExpressionWhereEntryRule() {
+		return getMultiExpressionWhereEntryAccess().getRule();
+	}
+
+	//ArrayExpression:
+	//	DoubleArrayExpression | LongArrayExpression | StringArrayExpression | NullArrayExpression | DateArrayExpression |
+	//	BooleanArrayExpression;
+	public ArrayExpressionElements getArrayExpressionAccess() {
+		return (pArrayExpression != null) ? pArrayExpression : (pArrayExpression = new ArrayExpressionElements());
+	}
+	
+	public ParserRule getArrayExpressionRule() {
+		return getArrayExpressionAccess().getRule();
+	}
+
+	//DoubleArrayExpression:
+	//	"[" values+=SIGNED_DOUBLE ("," values+=SIGNED_DOUBLE)* "]";
+	public DoubleArrayExpressionElements getDoubleArrayExpressionAccess() {
+		return (pDoubleArrayExpression != null) ? pDoubleArrayExpression : (pDoubleArrayExpression = new DoubleArrayExpressionElements());
+	}
+	
+	public ParserRule getDoubleArrayExpressionRule() {
+		return getDoubleArrayExpressionAccess().getRule();
+	}
+
+	//LongArrayExpression:
+	//	"[" values+=SINGED_LONG ("," values+=SINGED_LONG)* "]";
+	public LongArrayExpressionElements getLongArrayExpressionAccess() {
+		return (pLongArrayExpression != null) ? pLongArrayExpression : (pLongArrayExpression = new LongArrayExpressionElements());
+	}
+	
+	public ParserRule getLongArrayExpressionRule() {
+		return getLongArrayExpressionAccess().getRule();
+	}
+
+	//StringArrayExpression:
+	//	"[" values+=STRING ("," values+=STRING)* "]";
+	public StringArrayExpressionElements getStringArrayExpressionAccess() {
+		return (pStringArrayExpression != null) ? pStringArrayExpression : (pStringArrayExpression = new StringArrayExpressionElements());
+	}
+	
+	public ParserRule getStringArrayExpressionRule() {
+		return getStringArrayExpressionAccess().getRule();
+	}
+
+	//NullArrayExpression:
+	//	"[" values+="null" ("," values+="null")* "]";
+	public NullArrayExpressionElements getNullArrayExpressionAccess() {
+		return (pNullArrayExpression != null) ? pNullArrayExpression : (pNullArrayExpression = new NullArrayExpressionElements());
+	}
+	
+	public ParserRule getNullArrayExpressionRule() {
+		return getNullArrayExpressionAccess().getRule();
+	}
+
+	//DateArrayExpression:
+	//	"[" values+=DATE ("," values+=DATE)* "]";
+	public DateArrayExpressionElements getDateArrayExpressionAccess() {
+		return (pDateArrayExpression != null) ? pDateArrayExpression : (pDateArrayExpression = new DateArrayExpressionElements());
+	}
+	
+	public ParserRule getDateArrayExpressionRule() {
+		return getDateArrayExpressionAccess().getRule();
+	}
+
+	//BooleanArrayExpression:
+	//	"[" values+=BOOL ("," values+=BOOL)* "]";
+	public BooleanArrayExpressionElements getBooleanArrayExpressionAccess() {
+		return (pBooleanArrayExpression != null) ? pBooleanArrayExpression : (pBooleanArrayExpression = new BooleanArrayExpressionElements());
+	}
+	
+	public ParserRule getBooleanArrayExpressionRule() {
+		return getBooleanArrayExpressionAccess().getRule();
+	}
+
+	//enum ArrayOperator:
+	//	mongo_all="$all" | mongo_in="$in" | sql_in="in" | mongo_nin="$nin" | sql_notIn="not in";
+	public ArrayOperatorElements getArrayOperatorAccess() {
+		return (unknownRuleArrayOperator != null) ? unknownRuleArrayOperator : (unknownRuleArrayOperator = new ArrayOperatorElements());
+	}
+	
+	public EnumRule getArrayOperatorRule() {
+		return getArrayOperatorAccess().getRule();
+	}
+
 	//enum Operator:
 	//	lessThen="<" | greaterThen=">" | lessEqual="<=" | greaterEqual=">=" | equal="=" | notEqual="!=" | like |
 	//	notLike="not like" | notIn="not in" | in;
@@ -799,6 +1321,12 @@ public class MongoSQLGrammarAccess extends AbstractGrammarElementFinder {
 	public EnumRule getOperatorRule() {
 		return getOperatorAccess().getRule();
 	}
+
+	//terminal BOOL:
+	//	"true" | "false" | "TRUE" | "FALSE";
+	public TerminalRule getBOOLRule() {
+		return (tBOOL != null) ? tBOOL : (tBOOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOL"));
+	} 
 
 	//terminal SINGED_LONG returns ecore::ELong:
 	//	"-"? "0".."9"+;

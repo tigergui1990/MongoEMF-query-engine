@@ -73,6 +73,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory
       case QueryPackage.DATABASE: return createDatabase();
       case QueryPackage.WHERE_ENTRY: return createWhereEntry();
       case QueryPackage.EXPRESSION_WHERE_ENTRY: return createExpressionWhereEntry();
+      case QueryPackage.SINGLE_EXPRESSION_WHERE_ENTRY: return createSingleExpressionWhereEntry();
       case QueryPackage.EXPRESSION: return createExpression();
       case QueryPackage.REPLACABLE_VALUE: return createReplacableValue();
       case QueryPackage.DOUBLE_EXPRESSION: return createDoubleExpression();
@@ -81,6 +82,14 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory
       case QueryPackage.NULL_EXPRESSION: return createNullExpression();
       case QueryPackage.DATE_EXPRESSION: return createDateExpression();
       case QueryPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
+      case QueryPackage.MULTI_EXPRESSION_WHERE_ENTRY: return createMultiExpressionWhereEntry();
+      case QueryPackage.ARRAY_EXPRESSION: return createArrayExpression();
+      case QueryPackage.DOUBLE_ARRAY_EXPRESSION: return createDoubleArrayExpression();
+      case QueryPackage.LONG_ARRAY_EXPRESSION: return createLongArrayExpression();
+      case QueryPackage.STRING_ARRAY_EXPRESSION: return createStringArrayExpression();
+      case QueryPackage.NULL_ARRAY_EXPRESSION: return createNullArrayExpression();
+      case QueryPackage.DATE_ARRAY_EXPRESSION: return createDateArrayExpression();
+      case QueryPackage.BOOLEAN_ARRAY_EXPRESSION: return createBooleanArrayExpression();
       case QueryPackage.OR_WHERE_ENTRY: return createOrWhereEntry();
       case QueryPackage.AND_WHERE_ENTRY: return createAndWhereEntry();
       default:
@@ -98,6 +107,8 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case QueryPackage.ARRAY_OPERATOR:
+        return createArrayOperatorFromString(eDataType, initialValue);
       case QueryPackage.OPERATOR:
         return createOperatorFromString(eDataType, initialValue);
       default:
@@ -115,6 +126,8 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case QueryPackage.ARRAY_OPERATOR:
+        return convertArrayOperatorToString(eDataType, instanceValue);
       case QueryPackage.OPERATOR:
         return convertOperatorToString(eDataType, instanceValue);
       default:
@@ -164,6 +177,17 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory
   {
     ExpressionWhereEntryImpl expressionWhereEntry = new ExpressionWhereEntryImpl();
     return expressionWhereEntry;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SingleExpressionWhereEntry createSingleExpressionWhereEntry()
+  {
+    SingleExpressionWhereEntryImpl singleExpressionWhereEntry = new SingleExpressionWhereEntryImpl();
+    return singleExpressionWhereEntry;
   }
 
   /**
@@ -259,6 +283,94 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public MultiExpressionWhereEntry createMultiExpressionWhereEntry()
+  {
+    MultiExpressionWhereEntryImpl multiExpressionWhereEntry = new MultiExpressionWhereEntryImpl();
+    return multiExpressionWhereEntry;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayExpression createArrayExpression()
+  {
+    ArrayExpressionImpl arrayExpression = new ArrayExpressionImpl();
+    return arrayExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DoubleArrayExpression createDoubleArrayExpression()
+  {
+    DoubleArrayExpressionImpl doubleArrayExpression = new DoubleArrayExpressionImpl();
+    return doubleArrayExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LongArrayExpression createLongArrayExpression()
+  {
+    LongArrayExpressionImpl longArrayExpression = new LongArrayExpressionImpl();
+    return longArrayExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringArrayExpression createStringArrayExpression()
+  {
+    StringArrayExpressionImpl stringArrayExpression = new StringArrayExpressionImpl();
+    return stringArrayExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NullArrayExpression createNullArrayExpression()
+  {
+    NullArrayExpressionImpl nullArrayExpression = new NullArrayExpressionImpl();
+    return nullArrayExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DateArrayExpression createDateArrayExpression()
+  {
+    DateArrayExpressionImpl dateArrayExpression = new DateArrayExpressionImpl();
+    return dateArrayExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanArrayExpression createBooleanArrayExpression()
+  {
+    BooleanArrayExpressionImpl booleanArrayExpression = new BooleanArrayExpressionImpl();
+    return booleanArrayExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public OrWhereEntry createOrWhereEntry()
   {
     OrWhereEntryImpl orWhereEntry = new OrWhereEntryImpl();
@@ -274,6 +386,28 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory
   {
     AndWhereEntryImpl andWhereEntry = new AndWhereEntryImpl();
     return andWhereEntry;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayOperator createArrayOperatorFromString(EDataType eDataType, String initialValue)
+  {
+    ArrayOperator result = ArrayOperator.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertArrayOperatorToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

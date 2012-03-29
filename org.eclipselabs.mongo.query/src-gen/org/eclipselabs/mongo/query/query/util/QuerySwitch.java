@@ -105,6 +105,15 @@ public class QuerySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case QueryPackage.SINGLE_EXPRESSION_WHERE_ENTRY:
+      {
+        SingleExpressionWhereEntry singleExpressionWhereEntry = (SingleExpressionWhereEntry)theEObject;
+        T result = caseSingleExpressionWhereEntry(singleExpressionWhereEntry);
+        if (result == null) result = caseExpressionWhereEntry(singleExpressionWhereEntry);
+        if (result == null) result = caseWhereEntry(singleExpressionWhereEntry);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case QueryPackage.EXPRESSION:
       {
         Expression expression = (Expression)theEObject;
@@ -165,6 +174,70 @@ public class QuerySwitch<T> extends Switch<T>
         BooleanExpression booleanExpression = (BooleanExpression)theEObject;
         T result = caseBooleanExpression(booleanExpression);
         if (result == null) result = caseExpression(booleanExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.MULTI_EXPRESSION_WHERE_ENTRY:
+      {
+        MultiExpressionWhereEntry multiExpressionWhereEntry = (MultiExpressionWhereEntry)theEObject;
+        T result = caseMultiExpressionWhereEntry(multiExpressionWhereEntry);
+        if (result == null) result = caseExpressionWhereEntry(multiExpressionWhereEntry);
+        if (result == null) result = caseWhereEntry(multiExpressionWhereEntry);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.ARRAY_EXPRESSION:
+      {
+        ArrayExpression arrayExpression = (ArrayExpression)theEObject;
+        T result = caseArrayExpression(arrayExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.DOUBLE_ARRAY_EXPRESSION:
+      {
+        DoubleArrayExpression doubleArrayExpression = (DoubleArrayExpression)theEObject;
+        T result = caseDoubleArrayExpression(doubleArrayExpression);
+        if (result == null) result = caseArrayExpression(doubleArrayExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.LONG_ARRAY_EXPRESSION:
+      {
+        LongArrayExpression longArrayExpression = (LongArrayExpression)theEObject;
+        T result = caseLongArrayExpression(longArrayExpression);
+        if (result == null) result = caseArrayExpression(longArrayExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.STRING_ARRAY_EXPRESSION:
+      {
+        StringArrayExpression stringArrayExpression = (StringArrayExpression)theEObject;
+        T result = caseStringArrayExpression(stringArrayExpression);
+        if (result == null) result = caseArrayExpression(stringArrayExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.NULL_ARRAY_EXPRESSION:
+      {
+        NullArrayExpression nullArrayExpression = (NullArrayExpression)theEObject;
+        T result = caseNullArrayExpression(nullArrayExpression);
+        if (result == null) result = caseArrayExpression(nullArrayExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.DATE_ARRAY_EXPRESSION:
+      {
+        DateArrayExpression dateArrayExpression = (DateArrayExpression)theEObject;
+        T result = caseDateArrayExpression(dateArrayExpression);
+        if (result == null) result = caseArrayExpression(dateArrayExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QueryPackage.BOOLEAN_ARRAY_EXPRESSION:
+      {
+        BooleanArrayExpression booleanArrayExpression = (BooleanArrayExpression)theEObject;
+        T result = caseBooleanArrayExpression(booleanArrayExpression);
+        if (result == null) result = caseArrayExpression(booleanArrayExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -248,6 +321,22 @@ public class QuerySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpressionWhereEntry(ExpressionWhereEntry object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Single Expression Where Entry</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Single Expression Where Entry</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSingleExpressionWhereEntry(SingleExpressionWhereEntry object)
   {
     return null;
   }
@@ -376,6 +465,134 @@ public class QuerySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBooleanExpression(BooleanExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multi Expression Where Entry</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multi Expression Where Entry</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiExpressionWhereEntry(MultiExpressionWhereEntry object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArrayExpression(ArrayExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Double Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Double Array Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDoubleArrayExpression(DoubleArrayExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Long Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Long Array Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLongArrayExpression(LongArrayExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Array Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringArrayExpression(StringArrayExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Null Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Null Array Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNullArrayExpression(NullArrayExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Date Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Date Array Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDateArrayExpression(DateArrayExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Array Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanArrayExpression(BooleanArrayExpression object)
   {
     return null;
   }

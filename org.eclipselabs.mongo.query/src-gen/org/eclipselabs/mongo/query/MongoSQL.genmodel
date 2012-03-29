@@ -9,6 +9,13 @@
     editorPluginID="org.eclipselabs.mongo.query.editor">
   <genPackages prefix="Query" basePackage="org.eclipselabs.mongo.query" disposableProviderFactory="true"
       ecorePackage="MongoSQL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MongoSQL.ecore#//ArrayOperator">
+      <genEnumLiterals ecoreEnumLiteral="MongoSQL.ecore#//ArrayOperator/mongo_all"/>
+      <genEnumLiterals ecoreEnumLiteral="MongoSQL.ecore#//ArrayOperator/mongo_in"/>
+      <genEnumLiterals ecoreEnumLiteral="MongoSQL.ecore#//ArrayOperator/sql_in"/>
+      <genEnumLiterals ecoreEnumLiteral="MongoSQL.ecore#//ArrayOperator/mongo_nin"/>
+      <genEnumLiterals ecoreEnumLiteral="MongoSQL.ecore#//ArrayOperator/sql_notIn"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="MongoSQL.ecore#//Operator">
       <genEnumLiterals ecoreEnumLiteral="MongoSQL.ecore#//Operator/lessThen"/>
       <genEnumLiterals ecoreEnumLiteral="MongoSQL.ecore#//Operator/greaterThen"/>
@@ -35,8 +42,10 @@
     <genClasses ecoreClass="MongoSQL.ecore#//WhereEntry"/>
     <genClasses ecoreClass="MongoSQL.ecore#//ExpressionWhereEntry">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//ExpressionWhereEntry/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//ExpressionWhereEntry/operator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoSQL.ecore#//ExpressionWhereEntry/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//SingleExpressionWhereEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//SingleExpressionWhereEntry/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoSQL.ecore#//SingleExpressionWhereEntry/rhs"/>
     </genClasses>
     <genClasses ecoreClass="MongoSQL.ecore#//Expression"/>
     <genClasses ecoreClass="MongoSQL.ecore#//ReplacableValue">
@@ -59,6 +68,29 @@
     </genClasses>
     <genClasses ecoreClass="MongoSQL.ecore#//BooleanExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//BooleanExpression/true"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//MultiExpressionWhereEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//MultiExpressionWhereEntry/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoSQL.ecore#//MultiExpressionWhereEntry/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//ArrayExpression"/>
+    <genClasses ecoreClass="MongoSQL.ecore#//DoubleArrayExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//DoubleArrayExpression/values"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//LongArrayExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//LongArrayExpression/values"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//StringArrayExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//StringArrayExpression/values"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//NullArrayExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//NullArrayExpression/values"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//DateArrayExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//DateArrayExpression/values"/>
+    </genClasses>
+    <genClasses ecoreClass="MongoSQL.ecore#//BooleanArrayExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MongoSQL.ecore#//BooleanArrayExpression/values"/>
     </genClasses>
     <genClasses ecoreClass="MongoSQL.ecore#//OrWhereEntry">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MongoSQL.ecore#//OrWhereEntry/entries"/>

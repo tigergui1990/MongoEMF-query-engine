@@ -15,20 +15,30 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipselabs.mongo.query.query.AndWhereEntry;
+import org.eclipselabs.mongo.query.query.ArrayExpression;
+import org.eclipselabs.mongo.query.query.ArrayOperator;
+import org.eclipselabs.mongo.query.query.BooleanArrayExpression;
 import org.eclipselabs.mongo.query.query.BooleanExpression;
 import org.eclipselabs.mongo.query.query.Database;
+import org.eclipselabs.mongo.query.query.DateArrayExpression;
 import org.eclipselabs.mongo.query.query.DateExpression;
+import org.eclipselabs.mongo.query.query.DoubleArrayExpression;
 import org.eclipselabs.mongo.query.query.DoubleExpression;
 import org.eclipselabs.mongo.query.query.Expression;
 import org.eclipselabs.mongo.query.query.ExpressionWhereEntry;
+import org.eclipselabs.mongo.query.query.LongArrayExpression;
 import org.eclipselabs.mongo.query.query.LongExpression;
 import org.eclipselabs.mongo.query.query.Model;
+import org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry;
+import org.eclipselabs.mongo.query.query.NullArrayExpression;
 import org.eclipselabs.mongo.query.query.NullExpression;
 import org.eclipselabs.mongo.query.query.Operator;
 import org.eclipselabs.mongo.query.query.OrWhereEntry;
 import org.eclipselabs.mongo.query.query.QueryFactory;
 import org.eclipselabs.mongo.query.query.QueryPackage;
 import org.eclipselabs.mongo.query.query.ReplacableValue;
+import org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry;
+import org.eclipselabs.mongo.query.query.StringArrayExpression;
 import org.eclipselabs.mongo.query.query.StringExpression;
 import org.eclipselabs.mongo.query.query.WhereEntry;
 
@@ -67,6 +77,13 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
    * @generated
    */
   private EClass expressionWhereEntryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass singleExpressionWhereEntryEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,6 +146,62 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass multiExpressionWhereEntryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass arrayExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass doubleArrayExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass longArrayExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringArrayExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nullArrayExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dateArrayExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanArrayExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass orWhereEntryEClass = null;
 
   /**
@@ -137,6 +210,13 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
    * @generated
    */
   private EClass andWhereEntryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum arrayOperatorEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -333,9 +413,9 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExpressionWhereEntry_Operator()
+  public EClass getSingleExpressionWhereEntry()
   {
-    return (EAttribute)expressionWhereEntryEClass.getEStructuralFeatures().get(1);
+    return singleExpressionWhereEntryEClass;
   }
 
   /**
@@ -343,9 +423,19 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpressionWhereEntry_Rhs()
+  public EAttribute getSingleExpressionWhereEntry_Operator()
   {
-    return (EReference)expressionWhereEntryEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)singleExpressionWhereEntryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingleExpressionWhereEntry_Rhs()
+  {
+    return (EReference)singleExpressionWhereEntryEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -503,6 +593,166 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMultiExpressionWhereEntry()
+  {
+    return multiExpressionWhereEntryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiExpressionWhereEntry_Operator()
+  {
+    return (EAttribute)multiExpressionWhereEntryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiExpressionWhereEntry_Rhs()
+  {
+    return (EReference)multiExpressionWhereEntryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getArrayExpression()
+  {
+    return arrayExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDoubleArrayExpression()
+  {
+    return doubleArrayExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDoubleArrayExpression_Values()
+  {
+    return (EAttribute)doubleArrayExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLongArrayExpression()
+  {
+    return longArrayExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLongArrayExpression_Values()
+  {
+    return (EAttribute)longArrayExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringArrayExpression()
+  {
+    return stringArrayExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringArrayExpression_Values()
+  {
+    return (EAttribute)stringArrayExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNullArrayExpression()
+  {
+    return nullArrayExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNullArrayExpression_Values()
+  {
+    return (EAttribute)nullArrayExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDateArrayExpression()
+  {
+    return dateArrayExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDateArrayExpression_Values()
+  {
+    return (EAttribute)dateArrayExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanArrayExpression()
+  {
+    return booleanArrayExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanArrayExpression_Values()
+  {
+    return (EAttribute)booleanArrayExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getOrWhereEntry()
   {
     return orWhereEntryEClass;
@@ -536,6 +786,16 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
   public EReference getAndWhereEntry_Entries()
   {
     return (EReference)andWhereEntryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getArrayOperator()
+  {
+    return arrayOperatorEEnum;
   }
 
   /**
@@ -593,8 +853,10 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
 
     expressionWhereEntryEClass = createEClass(EXPRESSION_WHERE_ENTRY);
     createEAttribute(expressionWhereEntryEClass, EXPRESSION_WHERE_ENTRY__NAME);
-    createEAttribute(expressionWhereEntryEClass, EXPRESSION_WHERE_ENTRY__OPERATOR);
-    createEReference(expressionWhereEntryEClass, EXPRESSION_WHERE_ENTRY__RHS);
+
+    singleExpressionWhereEntryEClass = createEClass(SINGLE_EXPRESSION_WHERE_ENTRY);
+    createEAttribute(singleExpressionWhereEntryEClass, SINGLE_EXPRESSION_WHERE_ENTRY__OPERATOR);
+    createEReference(singleExpressionWhereEntryEClass, SINGLE_EXPRESSION_WHERE_ENTRY__RHS);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -619,6 +881,30 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
     booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
     createEAttribute(booleanExpressionEClass, BOOLEAN_EXPRESSION__TRUE);
 
+    multiExpressionWhereEntryEClass = createEClass(MULTI_EXPRESSION_WHERE_ENTRY);
+    createEAttribute(multiExpressionWhereEntryEClass, MULTI_EXPRESSION_WHERE_ENTRY__OPERATOR);
+    createEReference(multiExpressionWhereEntryEClass, MULTI_EXPRESSION_WHERE_ENTRY__RHS);
+
+    arrayExpressionEClass = createEClass(ARRAY_EXPRESSION);
+
+    doubleArrayExpressionEClass = createEClass(DOUBLE_ARRAY_EXPRESSION);
+    createEAttribute(doubleArrayExpressionEClass, DOUBLE_ARRAY_EXPRESSION__VALUES);
+
+    longArrayExpressionEClass = createEClass(LONG_ARRAY_EXPRESSION);
+    createEAttribute(longArrayExpressionEClass, LONG_ARRAY_EXPRESSION__VALUES);
+
+    stringArrayExpressionEClass = createEClass(STRING_ARRAY_EXPRESSION);
+    createEAttribute(stringArrayExpressionEClass, STRING_ARRAY_EXPRESSION__VALUES);
+
+    nullArrayExpressionEClass = createEClass(NULL_ARRAY_EXPRESSION);
+    createEAttribute(nullArrayExpressionEClass, NULL_ARRAY_EXPRESSION__VALUES);
+
+    dateArrayExpressionEClass = createEClass(DATE_ARRAY_EXPRESSION);
+    createEAttribute(dateArrayExpressionEClass, DATE_ARRAY_EXPRESSION__VALUES);
+
+    booleanArrayExpressionEClass = createEClass(BOOLEAN_ARRAY_EXPRESSION);
+    createEAttribute(booleanArrayExpressionEClass, BOOLEAN_ARRAY_EXPRESSION__VALUES);
+
     orWhereEntryEClass = createEClass(OR_WHERE_ENTRY);
     createEReference(orWhereEntryEClass, OR_WHERE_ENTRY__ENTRIES);
 
@@ -626,6 +912,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
     createEReference(andWhereEntryEClass, AND_WHERE_ENTRY__ENTRIES);
 
     // Create enums
+    arrayOperatorEEnum = createEEnum(ARRAY_OPERATOR);
     operatorEEnum = createEEnum(OPERATOR);
   }
 
@@ -659,6 +946,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
 
     // Add supertypes to classes
     expressionWhereEntryEClass.getESuperTypes().add(this.getWhereEntry());
+    singleExpressionWhereEntryEClass.getESuperTypes().add(this.getExpressionWhereEntry());
     replacableValueEClass.getESuperTypes().add(this.getExpression());
     doubleExpressionEClass.getESuperTypes().add(this.getExpression());
     longExpressionEClass.getESuperTypes().add(this.getExpression());
@@ -666,6 +954,13 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
     nullExpressionEClass.getESuperTypes().add(this.getExpression());
     dateExpressionEClass.getESuperTypes().add(this.getExpression());
     booleanExpressionEClass.getESuperTypes().add(this.getExpression());
+    multiExpressionWhereEntryEClass.getESuperTypes().add(this.getExpressionWhereEntry());
+    doubleArrayExpressionEClass.getESuperTypes().add(this.getArrayExpression());
+    longArrayExpressionEClass.getESuperTypes().add(this.getArrayExpression());
+    stringArrayExpressionEClass.getESuperTypes().add(this.getArrayExpression());
+    nullArrayExpressionEClass.getESuperTypes().add(this.getArrayExpression());
+    dateArrayExpressionEClass.getESuperTypes().add(this.getArrayExpression());
+    booleanArrayExpressionEClass.getESuperTypes().add(this.getArrayExpression());
     orWhereEntryEClass.getESuperTypes().add(this.getWhereEntry());
     andWhereEntryEClass.getESuperTypes().add(this.getWhereEntry());
 
@@ -685,8 +980,10 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
 
     initEClass(expressionWhereEntryEClass, ExpressionWhereEntry.class, "ExpressionWhereEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExpressionWhereEntry_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExpressionWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpressionWhereEntry_Operator(), this.getOperator(), "operator", null, 0, 1, ExpressionWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpressionWhereEntry_Rhs(), this.getExpression(), null, "rhs", null, 0, 1, ExpressionWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(singleExpressionWhereEntryEClass, SingleExpressionWhereEntry.class, "SingleExpressionWhereEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSingleExpressionWhereEntry_Operator(), this.getOperator(), "operator", null, 0, 1, SingleExpressionWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleExpressionWhereEntry_Rhs(), this.getExpression(), null, "rhs", null, 0, 1, SingleExpressionWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -711,6 +1008,30 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
     initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBooleanExpression_True(), ecorePackage.getEString(), "true", null, 0, 1, BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(multiExpressionWhereEntryEClass, MultiExpressionWhereEntry.class, "MultiExpressionWhereEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiExpressionWhereEntry_Operator(), this.getArrayOperator(), "operator", null, 0, 1, MultiExpressionWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiExpressionWhereEntry_Rhs(), this.getArrayExpression(), null, "rhs", null, 0, 1, MultiExpressionWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(arrayExpressionEClass, ArrayExpression.class, "ArrayExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(doubleArrayExpressionEClass, DoubleArrayExpression.class, "DoubleArrayExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDoubleArrayExpression_Values(), ecorePackage.getEDouble(), "values", null, 0, -1, DoubleArrayExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(longArrayExpressionEClass, LongArrayExpression.class, "LongArrayExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLongArrayExpression_Values(), ecorePackage.getELong(), "values", null, 0, -1, LongArrayExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringArrayExpressionEClass, StringArrayExpression.class, "StringArrayExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringArrayExpression_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringArrayExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nullArrayExpressionEClass, NullArrayExpression.class, "NullArrayExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNullArrayExpression_Values(), ecorePackage.getEString(), "values", null, 0, -1, NullArrayExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dateArrayExpressionEClass, DateArrayExpression.class, "DateArrayExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDateArrayExpression_Values(), ecorePackage.getEDate(), "values", null, 0, -1, DateArrayExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanArrayExpressionEClass, BooleanArrayExpression.class, "BooleanArrayExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanArrayExpression_Values(), ecorePackage.getEString(), "values", null, 0, -1, BooleanArrayExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(orWhereEntryEClass, OrWhereEntry.class, "OrWhereEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOrWhereEntry_Entries(), this.getWhereEntry(), null, "entries", null, 0, -1, OrWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -718,6 +1039,13 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
     initEReference(getAndWhereEntry_Entries(), this.getWhereEntry(), null, "entries", null, 0, -1, AndWhereEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
+    initEEnum(arrayOperatorEEnum, ArrayOperator.class, "ArrayOperator");
+    addEEnumLiteral(arrayOperatorEEnum, ArrayOperator.MONGO_ALL);
+    addEEnumLiteral(arrayOperatorEEnum, ArrayOperator.MONGO_IN);
+    addEEnumLiteral(arrayOperatorEEnum, ArrayOperator.SQL_IN);
+    addEEnumLiteral(arrayOperatorEEnum, ArrayOperator.MONGO_NIN);
+    addEEnumLiteral(arrayOperatorEEnum, ArrayOperator.SQL_NOT_IN);
+
     initEEnum(operatorEEnum, Operator.class, "Operator");
     addEEnumLiteral(operatorEEnum, Operator.LESS_THEN);
     addEEnumLiteral(operatorEEnum, Operator.GREATER_THEN);

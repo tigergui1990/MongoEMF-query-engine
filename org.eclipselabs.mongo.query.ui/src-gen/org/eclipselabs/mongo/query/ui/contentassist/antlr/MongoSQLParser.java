@@ -39,8 +39,11 @@ public class MongoSQLParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getColumnListAccess().getAlternatives(), "rule__ColumnList__Alternatives");
 					put(grammarAccess.getConcreteWhereEntryAccess().getAlternatives(), "rule__ConcreteWhereEntry__Alternatives");
+					put(grammarAccess.getExpressionWhereEntryAccess().getAlternatives(), "rule__ExpressionWhereEntry__Alternatives");
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getBooleanExpressionAccess().getAlternatives(), "rule__BooleanExpression__Alternatives");
+					put(grammarAccess.getArrayExpressionAccess().getAlternatives(), "rule__ArrayExpression__Alternatives");
+					put(grammarAccess.getArrayOperatorAccess().getAlternatives(), "rule__ArrayOperator__Alternatives");
 					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getModelAccess().getGroup_4(), "rule__Model__Group_4__0");
@@ -55,7 +58,20 @@ public class MongoSQLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAndWhereEntryAccess().getGroup_1(), "rule__AndWhereEntry__Group_1__0");
 					put(grammarAccess.getAndWhereEntryAccess().getGroup_1_1(), "rule__AndWhereEntry__Group_1_1__0");
 					put(grammarAccess.getParWhereEntryAccess().getGroup(), "rule__ParWhereEntry__Group__0");
-					put(grammarAccess.getExpressionWhereEntryAccess().getGroup(), "rule__ExpressionWhereEntry__Group__0");
+					put(grammarAccess.getSingleExpressionWhereEntryAccess().getGroup(), "rule__SingleExpressionWhereEntry__Group__0");
+					put(grammarAccess.getMultiExpressionWhereEntryAccess().getGroup(), "rule__MultiExpressionWhereEntry__Group__0");
+					put(grammarAccess.getDoubleArrayExpressionAccess().getGroup(), "rule__DoubleArrayExpression__Group__0");
+					put(grammarAccess.getDoubleArrayExpressionAccess().getGroup_2(), "rule__DoubleArrayExpression__Group_2__0");
+					put(grammarAccess.getLongArrayExpressionAccess().getGroup(), "rule__LongArrayExpression__Group__0");
+					put(grammarAccess.getLongArrayExpressionAccess().getGroup_2(), "rule__LongArrayExpression__Group_2__0");
+					put(grammarAccess.getStringArrayExpressionAccess().getGroup(), "rule__StringArrayExpression__Group__0");
+					put(grammarAccess.getStringArrayExpressionAccess().getGroup_2(), "rule__StringArrayExpression__Group_2__0");
+					put(grammarAccess.getNullArrayExpressionAccess().getGroup(), "rule__NullArrayExpression__Group__0");
+					put(grammarAccess.getNullArrayExpressionAccess().getGroup_2(), "rule__NullArrayExpression__Group_2__0");
+					put(grammarAccess.getDateArrayExpressionAccess().getGroup(), "rule__DateArrayExpression__Group__0");
+					put(grammarAccess.getDateArrayExpressionAccess().getGroup_2(), "rule__DateArrayExpression__Group_2__0");
+					put(grammarAccess.getBooleanArrayExpressionAccess().getGroup(), "rule__BooleanArrayExpression__Group__0");
+					put(grammarAccess.getBooleanArrayExpressionAccess().getGroup_2(), "rule__BooleanArrayExpression__Group_2__0");
 					put(grammarAccess.getModelAccess().getAttrsAssignment_1(), "rule__Model__AttrsAssignment_1");
 					put(grammarAccess.getModelAccess().getDbAssignment_3(), "rule__Model__DbAssignment_3");
 					put(grammarAccess.getModelAccess().getWhereEntryAssignment_4_1(), "rule__Model__WhereEntryAssignment_4_1");
@@ -65,9 +81,9 @@ public class MongoSQLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDatabaseAccess().getNameAssignment_6(), "rule__Database__NameAssignment_6");
 					put(grammarAccess.getWhereEntryAccess().getEntriesAssignment_1_1_1(), "rule__WhereEntry__EntriesAssignment_1_1_1");
 					put(grammarAccess.getAndWhereEntryAccess().getEntriesAssignment_1_1_1(), "rule__AndWhereEntry__EntriesAssignment_1_1_1");
-					put(grammarAccess.getExpressionWhereEntryAccess().getNameAssignment_0(), "rule__ExpressionWhereEntry__NameAssignment_0");
-					put(grammarAccess.getExpressionWhereEntryAccess().getOperatorAssignment_1(), "rule__ExpressionWhereEntry__OperatorAssignment_1");
-					put(grammarAccess.getExpressionWhereEntryAccess().getRhsAssignment_2(), "rule__ExpressionWhereEntry__RhsAssignment_2");
+					put(grammarAccess.getSingleExpressionWhereEntryAccess().getNameAssignment_0(), "rule__SingleExpressionWhereEntry__NameAssignment_0");
+					put(grammarAccess.getSingleExpressionWhereEntryAccess().getOperatorAssignment_1(), "rule__SingleExpressionWhereEntry__OperatorAssignment_1");
+					put(grammarAccess.getSingleExpressionWhereEntryAccess().getRhsAssignment_2(), "rule__SingleExpressionWhereEntry__RhsAssignment_2");
 					put(grammarAccess.getReplacableValueAccess().getValueAssignment(), "rule__ReplacableValue__ValueAssignment");
 					put(grammarAccess.getDoubleExpressionAccess().getValueAssignment(), "rule__DoubleExpression__ValueAssignment");
 					put(grammarAccess.getLongExpressionAccess().getValueAssignment(), "rule__LongExpression__ValueAssignment");
@@ -76,6 +92,21 @@ public class MongoSQLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDateExpressionAccess().getValueAssignment(), "rule__DateExpression__ValueAssignment");
 					put(grammarAccess.getBooleanExpressionAccess().getTrueAssignment_0(), "rule__BooleanExpression__TrueAssignment_0");
 					put(grammarAccess.getBooleanExpressionAccess().getTrueAssignment_1(), "rule__BooleanExpression__TrueAssignment_1");
+					put(grammarAccess.getMultiExpressionWhereEntryAccess().getNameAssignment_0(), "rule__MultiExpressionWhereEntry__NameAssignment_0");
+					put(grammarAccess.getMultiExpressionWhereEntryAccess().getOperatorAssignment_1(), "rule__MultiExpressionWhereEntry__OperatorAssignment_1");
+					put(grammarAccess.getMultiExpressionWhereEntryAccess().getRhsAssignment_2(), "rule__MultiExpressionWhereEntry__RhsAssignment_2");
+					put(grammarAccess.getDoubleArrayExpressionAccess().getValuesAssignment_1(), "rule__DoubleArrayExpression__ValuesAssignment_1");
+					put(grammarAccess.getDoubleArrayExpressionAccess().getValuesAssignment_2_1(), "rule__DoubleArrayExpression__ValuesAssignment_2_1");
+					put(grammarAccess.getLongArrayExpressionAccess().getValuesAssignment_1(), "rule__LongArrayExpression__ValuesAssignment_1");
+					put(grammarAccess.getLongArrayExpressionAccess().getValuesAssignment_2_1(), "rule__LongArrayExpression__ValuesAssignment_2_1");
+					put(grammarAccess.getStringArrayExpressionAccess().getValuesAssignment_1(), "rule__StringArrayExpression__ValuesAssignment_1");
+					put(grammarAccess.getStringArrayExpressionAccess().getValuesAssignment_2_1(), "rule__StringArrayExpression__ValuesAssignment_2_1");
+					put(grammarAccess.getNullArrayExpressionAccess().getValuesAssignment_1(), "rule__NullArrayExpression__ValuesAssignment_1");
+					put(grammarAccess.getNullArrayExpressionAccess().getValuesAssignment_2_1(), "rule__NullArrayExpression__ValuesAssignment_2_1");
+					put(grammarAccess.getDateArrayExpressionAccess().getValuesAssignment_1(), "rule__DateArrayExpression__ValuesAssignment_1");
+					put(grammarAccess.getDateArrayExpressionAccess().getValuesAssignment_2_1(), "rule__DateArrayExpression__ValuesAssignment_2_1");
+					put(grammarAccess.getBooleanArrayExpressionAccess().getValuesAssignment_1(), "rule__BooleanArrayExpression__ValuesAssignment_1");
+					put(grammarAccess.getBooleanArrayExpressionAccess().getValuesAssignment_2_1(), "rule__BooleanArrayExpression__ValuesAssignment_2_1");
 				}
 			};
 		}

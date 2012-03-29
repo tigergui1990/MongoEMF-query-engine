@@ -201,13 +201,41 @@ public interface QueryPackage extends EPackage
   int EXPRESSION_WHERE_ENTRY__NAME = WHERE_ENTRY_FEATURE_COUNT + 0;
 
   /**
+   * The number of structural features of the '<em>Expression Where Entry</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_WHERE_ENTRY_FEATURE_COUNT = WHERE_ENTRY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.SingleExpressionWhereEntryImpl <em>Single Expression Where Entry</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.SingleExpressionWhereEntryImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getSingleExpressionWhereEntry()
+   * @generated
+   */
+  int SINGLE_EXPRESSION_WHERE_ENTRY = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_EXPRESSION_WHERE_ENTRY__NAME = EXPRESSION_WHERE_ENTRY__NAME;
+
+  /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_WHERE_ENTRY__OPERATOR = WHERE_ENTRY_FEATURE_COUNT + 1;
+  int SINGLE_EXPRESSION_WHERE_ENTRY__OPERATOR = EXPRESSION_WHERE_ENTRY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Rhs</b></em>' containment reference.
@@ -216,16 +244,16 @@ public interface QueryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_WHERE_ENTRY__RHS = WHERE_ENTRY_FEATURE_COUNT + 2;
+  int SINGLE_EXPRESSION_WHERE_ENTRY__RHS = EXPRESSION_WHERE_ENTRY_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Expression Where Entry</em>' class.
+   * The number of structural features of the '<em>Single Expression Where Entry</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_WHERE_ENTRY_FEATURE_COUNT = WHERE_ENTRY_FEATURE_COUNT + 3;
+  int SINGLE_EXPRESSION_WHERE_ENTRY_FEATURE_COUNT = EXPRESSION_WHERE_ENTRY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -235,7 +263,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 4;
+  int EXPRESSION = 5;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -254,7 +282,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getReplacableValue()
    * @generated
    */
-  int REPLACABLE_VALUE = 5;
+  int REPLACABLE_VALUE = 6;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -282,7 +310,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getDoubleExpression()
    * @generated
    */
-  int DOUBLE_EXPRESSION = 6;
+  int DOUBLE_EXPRESSION = 7;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -310,7 +338,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getLongExpression()
    * @generated
    */
-  int LONG_EXPRESSION = 7;
+  int LONG_EXPRESSION = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -338,7 +366,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getStringExpression()
    * @generated
    */
-  int STRING_EXPRESSION = 8;
+  int STRING_EXPRESSION = 9;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -366,7 +394,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getNullExpression()
    * @generated
    */
-  int NULL_EXPRESSION = 9;
+  int NULL_EXPRESSION = 10;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -394,7 +422,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getDateExpression()
    * @generated
    */
-  int DATE_EXPRESSION = 10;
+  int DATE_EXPRESSION = 11;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -422,7 +450,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getBooleanExpression()
    * @generated
    */
-  int BOOLEAN_EXPRESSION = 11;
+  int BOOLEAN_EXPRESSION = 12;
 
   /**
    * The feature id for the '<em><b>True</b></em>' attribute.
@@ -443,6 +471,239 @@ public interface QueryPackage extends EPackage
   int BOOLEAN_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.MultiExpressionWhereEntryImpl <em>Multi Expression Where Entry</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.MultiExpressionWhereEntryImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getMultiExpressionWhereEntry()
+   * @generated
+   */
+  int MULTI_EXPRESSION_WHERE_ENTRY = 13;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_EXPRESSION_WHERE_ENTRY__NAME = EXPRESSION_WHERE_ENTRY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_EXPRESSION_WHERE_ENTRY__OPERATOR = EXPRESSION_WHERE_ENTRY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Rhs</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_EXPRESSION_WHERE_ENTRY__RHS = EXPRESSION_WHERE_ENTRY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Multi Expression Where Entry</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_EXPRESSION_WHERE_ENTRY_FEATURE_COUNT = EXPRESSION_WHERE_ENTRY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.ArrayExpressionImpl <em>Array Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.ArrayExpressionImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getArrayExpression()
+   * @generated
+   */
+  int ARRAY_EXPRESSION = 14;
+
+  /**
+   * The number of structural features of the '<em>Array Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.DoubleArrayExpressionImpl <em>Double Array Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.DoubleArrayExpressionImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getDoubleArrayExpression()
+   * @generated
+   */
+  int DOUBLE_ARRAY_EXPRESSION = 15;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_ARRAY_EXPRESSION__VALUES = ARRAY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Double Array Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_ARRAY_EXPRESSION_FEATURE_COUNT = ARRAY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.LongArrayExpressionImpl <em>Long Array Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.LongArrayExpressionImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getLongArrayExpression()
+   * @generated
+   */
+  int LONG_ARRAY_EXPRESSION = 16;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_ARRAY_EXPRESSION__VALUES = ARRAY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Long Array Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_ARRAY_EXPRESSION_FEATURE_COUNT = ARRAY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.StringArrayExpressionImpl <em>String Array Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.StringArrayExpressionImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getStringArrayExpression()
+   * @generated
+   */
+  int STRING_ARRAY_EXPRESSION = 17;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_ARRAY_EXPRESSION__VALUES = ARRAY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Array Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_ARRAY_EXPRESSION_FEATURE_COUNT = ARRAY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.NullArrayExpressionImpl <em>Null Array Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.NullArrayExpressionImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getNullArrayExpression()
+   * @generated
+   */
+  int NULL_ARRAY_EXPRESSION = 18;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NULL_ARRAY_EXPRESSION__VALUES = ARRAY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Null Array Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NULL_ARRAY_EXPRESSION_FEATURE_COUNT = ARRAY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.DateArrayExpressionImpl <em>Date Array Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.DateArrayExpressionImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getDateArrayExpression()
+   * @generated
+   */
+  int DATE_ARRAY_EXPRESSION = 19;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATE_ARRAY_EXPRESSION__VALUES = ARRAY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Date Array Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATE_ARRAY_EXPRESSION_FEATURE_COUNT = ARRAY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.BooleanArrayExpressionImpl <em>Boolean Array Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.impl.BooleanArrayExpressionImpl
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getBooleanArrayExpression()
+   * @generated
+   */
+  int BOOLEAN_ARRAY_EXPRESSION = 20;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_ARRAY_EXPRESSION__VALUES = ARRAY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean Array Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_ARRAY_EXPRESSION_FEATURE_COUNT = ARRAY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.eclipselabs.mongo.query.query.impl.OrWhereEntryImpl <em>Or Where Entry</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -450,7 +711,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getOrWhereEntry()
    * @generated
    */
-  int OR_WHERE_ENTRY = 12;
+  int OR_WHERE_ENTRY = 21;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -478,7 +739,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getAndWhereEntry()
    * @generated
    */
-  int AND_WHERE_ENTRY = 13;
+  int AND_WHERE_ENTRY = 22;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -499,6 +760,16 @@ public interface QueryPackage extends EPackage
   int AND_WHERE_ENTRY_FEATURE_COUNT = WHERE_ENTRY_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.eclipselabs.mongo.query.query.ArrayOperator <em>Array Operator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipselabs.mongo.query.query.ArrayOperator
+   * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getArrayOperator()
+   * @generated
+   */
+  int ARRAY_OPERATOR = 23;
+
+  /**
    * The meta object id for the '{@link org.eclipselabs.mongo.query.query.Operator <em>Operator</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -506,7 +777,7 @@ public interface QueryPackage extends EPackage
    * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getOperator()
    * @generated
    */
-  int OPERATOR = 14;
+  int OPERATOR = 24;
 
 
   /**
@@ -638,26 +909,36 @@ public interface QueryPackage extends EPackage
   EAttribute getExpressionWhereEntry_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipselabs.mongo.query.query.ExpressionWhereEntry#getOperator <em>Operator</em>}'.
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry <em>Single Expression Where Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Single Expression Where Entry</em>'.
+   * @see org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry
+   * @generated
+   */
+  EClass getSingleExpressionWhereEntry();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry#getOperator <em>Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Operator</em>'.
-   * @see org.eclipselabs.mongo.query.query.ExpressionWhereEntry#getOperator()
-   * @see #getExpressionWhereEntry()
+   * @see org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry#getOperator()
+   * @see #getSingleExpressionWhereEntry()
    * @generated
    */
-  EAttribute getExpressionWhereEntry_Operator();
+  EAttribute getSingleExpressionWhereEntry_Operator();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipselabs.mongo.query.query.ExpressionWhereEntry#getRhs <em>Rhs</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry#getRhs <em>Rhs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Rhs</em>'.
-   * @see org.eclipselabs.mongo.query.query.ExpressionWhereEntry#getRhs()
-   * @see #getExpressionWhereEntry()
+   * @see org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry#getRhs()
+   * @see #getSingleExpressionWhereEntry()
    * @generated
    */
-  EReference getExpressionWhereEntry_Rhs();
+  EReference getSingleExpressionWhereEntry_Rhs();
 
   /**
    * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.Expression <em>Expression</em>}'.
@@ -817,6 +1098,174 @@ public interface QueryPackage extends EPackage
   EAttribute getBooleanExpression_True();
 
   /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry <em>Multi Expression Where Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multi Expression Where Entry</em>'.
+   * @see org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry
+   * @generated
+   */
+  EClass getMultiExpressionWhereEntry();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry#getOperator()
+   * @see #getMultiExpressionWhereEntry()
+   * @generated
+   */
+  EAttribute getMultiExpressionWhereEntry_Operator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry#getRhs <em>Rhs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rhs</em>'.
+   * @see org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry#getRhs()
+   * @see #getMultiExpressionWhereEntry()
+   * @generated
+   */
+  EReference getMultiExpressionWhereEntry_Rhs();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.ArrayExpression <em>Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array Expression</em>'.
+   * @see org.eclipselabs.mongo.query.query.ArrayExpression
+   * @generated
+   */
+  EClass getArrayExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.DoubleArrayExpression <em>Double Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Double Array Expression</em>'.
+   * @see org.eclipselabs.mongo.query.query.DoubleArrayExpression
+   * @generated
+   */
+  EClass getDoubleArrayExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.eclipselabs.mongo.query.query.DoubleArrayExpression#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see org.eclipselabs.mongo.query.query.DoubleArrayExpression#getValues()
+   * @see #getDoubleArrayExpression()
+   * @generated
+   */
+  EAttribute getDoubleArrayExpression_Values();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.LongArrayExpression <em>Long Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Long Array Expression</em>'.
+   * @see org.eclipselabs.mongo.query.query.LongArrayExpression
+   * @generated
+   */
+  EClass getLongArrayExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.eclipselabs.mongo.query.query.LongArrayExpression#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see org.eclipselabs.mongo.query.query.LongArrayExpression#getValues()
+   * @see #getLongArrayExpression()
+   * @generated
+   */
+  EAttribute getLongArrayExpression_Values();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.StringArrayExpression <em>String Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Array Expression</em>'.
+   * @see org.eclipselabs.mongo.query.query.StringArrayExpression
+   * @generated
+   */
+  EClass getStringArrayExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.eclipselabs.mongo.query.query.StringArrayExpression#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see org.eclipselabs.mongo.query.query.StringArrayExpression#getValues()
+   * @see #getStringArrayExpression()
+   * @generated
+   */
+  EAttribute getStringArrayExpression_Values();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.NullArrayExpression <em>Null Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Null Array Expression</em>'.
+   * @see org.eclipselabs.mongo.query.query.NullArrayExpression
+   * @generated
+   */
+  EClass getNullArrayExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.eclipselabs.mongo.query.query.NullArrayExpression#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see org.eclipselabs.mongo.query.query.NullArrayExpression#getValues()
+   * @see #getNullArrayExpression()
+   * @generated
+   */
+  EAttribute getNullArrayExpression_Values();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.DateArrayExpression <em>Date Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Date Array Expression</em>'.
+   * @see org.eclipselabs.mongo.query.query.DateArrayExpression
+   * @generated
+   */
+  EClass getDateArrayExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.eclipselabs.mongo.query.query.DateArrayExpression#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see org.eclipselabs.mongo.query.query.DateArrayExpression#getValues()
+   * @see #getDateArrayExpression()
+   * @generated
+   */
+  EAttribute getDateArrayExpression_Values();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.BooleanArrayExpression <em>Boolean Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Array Expression</em>'.
+   * @see org.eclipselabs.mongo.query.query.BooleanArrayExpression
+   * @generated
+   */
+  EClass getBooleanArrayExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.eclipselabs.mongo.query.query.BooleanArrayExpression#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see org.eclipselabs.mongo.query.query.BooleanArrayExpression#getValues()
+   * @see #getBooleanArrayExpression()
+   * @generated
+   */
+  EAttribute getBooleanArrayExpression_Values();
+
+  /**
    * Returns the meta object for class '{@link org.eclipselabs.mongo.query.query.OrWhereEntry <em>Or Where Entry</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -857,6 +1306,16 @@ public interface QueryPackage extends EPackage
    * @generated
    */
   EReference getAndWhereEntry_Entries();
+
+  /**
+   * Returns the meta object for enum '{@link org.eclipselabs.mongo.query.query.ArrayOperator <em>Array Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Array Operator</em>'.
+   * @see org.eclipselabs.mongo.query.query.ArrayOperator
+   * @generated
+   */
+  EEnum getArrayOperator();
 
   /**
    * Returns the meta object for enum '{@link org.eclipselabs.mongo.query.query.Operator <em>Operator</em>}'.
@@ -996,12 +1455,22 @@ public interface QueryPackage extends EPackage
     EAttribute EXPRESSION_WHERE_ENTRY__NAME = eINSTANCE.getExpressionWhereEntry_Name();
 
     /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.SingleExpressionWhereEntryImpl <em>Single Expression Where Entry</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.SingleExpressionWhereEntryImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getSingleExpressionWhereEntry()
+     * @generated
+     */
+    EClass SINGLE_EXPRESSION_WHERE_ENTRY = eINSTANCE.getSingleExpressionWhereEntry();
+
+    /**
      * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPRESSION_WHERE_ENTRY__OPERATOR = eINSTANCE.getExpressionWhereEntry_Operator();
+    EAttribute SINGLE_EXPRESSION_WHERE_ENTRY__OPERATOR = eINSTANCE.getSingleExpressionWhereEntry_Operator();
 
     /**
      * The meta object literal for the '<em><b>Rhs</b></em>' containment reference feature.
@@ -1009,7 +1478,7 @@ public interface QueryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION_WHERE_ENTRY__RHS = eINSTANCE.getExpressionWhereEntry_Rhs();
+    EReference SINGLE_EXPRESSION_WHERE_ENTRY__RHS = eINSTANCE.getSingleExpressionWhereEntry_Rhs();
 
     /**
      * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -1148,6 +1617,150 @@ public interface QueryPackage extends EPackage
     EAttribute BOOLEAN_EXPRESSION__TRUE = eINSTANCE.getBooleanExpression_True();
 
     /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.MultiExpressionWhereEntryImpl <em>Multi Expression Where Entry</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.MultiExpressionWhereEntryImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getMultiExpressionWhereEntry()
+     * @generated
+     */
+    EClass MULTI_EXPRESSION_WHERE_ENTRY = eINSTANCE.getMultiExpressionWhereEntry();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTI_EXPRESSION_WHERE_ENTRY__OPERATOR = eINSTANCE.getMultiExpressionWhereEntry_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Rhs</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTI_EXPRESSION_WHERE_ENTRY__RHS = eINSTANCE.getMultiExpressionWhereEntry_Rhs();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.ArrayExpressionImpl <em>Array Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.ArrayExpressionImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getArrayExpression()
+     * @generated
+     */
+    EClass ARRAY_EXPRESSION = eINSTANCE.getArrayExpression();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.DoubleArrayExpressionImpl <em>Double Array Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.DoubleArrayExpressionImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getDoubleArrayExpression()
+     * @generated
+     */
+    EClass DOUBLE_ARRAY_EXPRESSION = eINSTANCE.getDoubleArrayExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOUBLE_ARRAY_EXPRESSION__VALUES = eINSTANCE.getDoubleArrayExpression_Values();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.LongArrayExpressionImpl <em>Long Array Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.LongArrayExpressionImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getLongArrayExpression()
+     * @generated
+     */
+    EClass LONG_ARRAY_EXPRESSION = eINSTANCE.getLongArrayExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LONG_ARRAY_EXPRESSION__VALUES = eINSTANCE.getLongArrayExpression_Values();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.StringArrayExpressionImpl <em>String Array Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.StringArrayExpressionImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getStringArrayExpression()
+     * @generated
+     */
+    EClass STRING_ARRAY_EXPRESSION = eINSTANCE.getStringArrayExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_ARRAY_EXPRESSION__VALUES = eINSTANCE.getStringArrayExpression_Values();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.NullArrayExpressionImpl <em>Null Array Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.NullArrayExpressionImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getNullArrayExpression()
+     * @generated
+     */
+    EClass NULL_ARRAY_EXPRESSION = eINSTANCE.getNullArrayExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NULL_ARRAY_EXPRESSION__VALUES = eINSTANCE.getNullArrayExpression_Values();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.DateArrayExpressionImpl <em>Date Array Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.DateArrayExpressionImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getDateArrayExpression()
+     * @generated
+     */
+    EClass DATE_ARRAY_EXPRESSION = eINSTANCE.getDateArrayExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATE_ARRAY_EXPRESSION__VALUES = eINSTANCE.getDateArrayExpression_Values();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.BooleanArrayExpressionImpl <em>Boolean Array Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.impl.BooleanArrayExpressionImpl
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getBooleanArrayExpression()
+     * @generated
+     */
+    EClass BOOLEAN_ARRAY_EXPRESSION = eINSTANCE.getBooleanArrayExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOLEAN_ARRAY_EXPRESSION__VALUES = eINSTANCE.getBooleanArrayExpression_Values();
+
+    /**
      * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.impl.OrWhereEntryImpl <em>Or Where Entry</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1182,6 +1795,16 @@ public interface QueryPackage extends EPackage
      * @generated
      */
     EReference AND_WHERE_ENTRY__ENTRIES = eINSTANCE.getAndWhereEntry_Entries();
+
+    /**
+     * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.ArrayOperator <em>Array Operator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipselabs.mongo.query.query.ArrayOperator
+     * @see org.eclipselabs.mongo.query.query.impl.QueryPackageImpl#getArrayOperator()
+     * @generated
+     */
+    EEnum ARRAY_OPERATOR = eINSTANCE.getArrayOperator();
 
     /**
      * The meta object literal for the '{@link org.eclipselabs.mongo.query.query.Operator <em>Operator</em>}' enum.

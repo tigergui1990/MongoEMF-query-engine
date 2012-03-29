@@ -99,6 +99,11 @@ public class QueryAdapterFactory extends AdapterFactoryImpl
         return createExpressionWhereEntryAdapter();
       }
       @Override
+      public Adapter caseSingleExpressionWhereEntry(SingleExpressionWhereEntry object)
+      {
+        return createSingleExpressionWhereEntryAdapter();
+      }
+      @Override
       public Adapter caseExpression(Expression object)
       {
         return createExpressionAdapter();
@@ -137,6 +142,46 @@ public class QueryAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBooleanExpression(BooleanExpression object)
       {
         return createBooleanExpressionAdapter();
+      }
+      @Override
+      public Adapter caseMultiExpressionWhereEntry(MultiExpressionWhereEntry object)
+      {
+        return createMultiExpressionWhereEntryAdapter();
+      }
+      @Override
+      public Adapter caseArrayExpression(ArrayExpression object)
+      {
+        return createArrayExpressionAdapter();
+      }
+      @Override
+      public Adapter caseDoubleArrayExpression(DoubleArrayExpression object)
+      {
+        return createDoubleArrayExpressionAdapter();
+      }
+      @Override
+      public Adapter caseLongArrayExpression(LongArrayExpression object)
+      {
+        return createLongArrayExpressionAdapter();
+      }
+      @Override
+      public Adapter caseStringArrayExpression(StringArrayExpression object)
+      {
+        return createStringArrayExpressionAdapter();
+      }
+      @Override
+      public Adapter caseNullArrayExpression(NullArrayExpression object)
+      {
+        return createNullArrayExpressionAdapter();
+      }
+      @Override
+      public Adapter caseDateArrayExpression(DateArrayExpression object)
+      {
+        return createDateArrayExpressionAdapter();
+      }
+      @Override
+      public Adapter caseBooleanArrayExpression(BooleanArrayExpression object)
+      {
+        return createBooleanArrayExpressionAdapter();
       }
       @Override
       public Adapter caseOrWhereEntry(OrWhereEntry object)
@@ -226,6 +271,21 @@ public class QueryAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExpressionWhereEntryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry <em>Single Expression Where Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry
+   * @generated
+   */
+  public Adapter createSingleExpressionWhereEntryAdapter()
   {
     return null;
   }
@@ -346,6 +406,126 @@ public class QueryAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBooleanExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry <em>Multi Expression Where Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry
+   * @generated
+   */
+  public Adapter createMultiExpressionWhereEntryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.ArrayExpression <em>Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.ArrayExpression
+   * @generated
+   */
+  public Adapter createArrayExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.DoubleArrayExpression <em>Double Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.DoubleArrayExpression
+   * @generated
+   */
+  public Adapter createDoubleArrayExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.LongArrayExpression <em>Long Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.LongArrayExpression
+   * @generated
+   */
+  public Adapter createLongArrayExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.StringArrayExpression <em>String Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.StringArrayExpression
+   * @generated
+   */
+  public Adapter createStringArrayExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.NullArrayExpression <em>Null Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.NullArrayExpression
+   * @generated
+   */
+  public Adapter createNullArrayExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.DateArrayExpression <em>Date Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.DateArrayExpression
+   * @generated
+   */
+  public Adapter createDateArrayExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipselabs.mongo.query.query.BooleanArrayExpression <em>Boolean Array Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipselabs.mongo.query.query.BooleanArrayExpression
+   * @generated
+   */
+  public Adapter createBooleanArrayExpressionAdapter()
   {
     return null;
   }

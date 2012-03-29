@@ -63,6 +63,15 @@ public interface QueryFactory extends EFactory
   ExpressionWhereEntry createExpressionWhereEntry();
 
   /**
+   * Returns a new object of class '<em>Single Expression Where Entry</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single Expression Where Entry</em>'.
+   * @generated
+   */
+  SingleExpressionWhereEntry createSingleExpressionWhereEntry();
+
+  /**
    * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -133,6 +142,78 @@ public interface QueryFactory extends EFactory
    * @generated
    */
   BooleanExpression createBooleanExpression();
+
+  /**
+   * Returns a new object of class '<em>Multi Expression Where Entry</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Expression Where Entry</em>'.
+   * @generated
+   */
+  MultiExpressionWhereEntry createMultiExpressionWhereEntry();
+
+  /**
+   * Returns a new object of class '<em>Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Expression</em>'.
+   * @generated
+   */
+  ArrayExpression createArrayExpression();
+
+  /**
+   * Returns a new object of class '<em>Double Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double Array Expression</em>'.
+   * @generated
+   */
+  DoubleArrayExpression createDoubleArrayExpression();
+
+  /**
+   * Returns a new object of class '<em>Long Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Long Array Expression</em>'.
+   * @generated
+   */
+  LongArrayExpression createLongArrayExpression();
+
+  /**
+   * Returns a new object of class '<em>String Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Array Expression</em>'.
+   * @generated
+   */
+  StringArrayExpression createStringArrayExpression();
+
+  /**
+   * Returns a new object of class '<em>Null Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Null Array Expression</em>'.
+   * @generated
+   */
+  NullArrayExpression createNullArrayExpression();
+
+  /**
+   * Returns a new object of class '<em>Date Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Date Array Expression</em>'.
+   * @generated
+   */
+  DateArrayExpression createDateArrayExpression();
+
+  /**
+   * Returns a new object of class '<em>Boolean Array Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Array Expression</em>'.
+   * @generated
+   */
+  BooleanArrayExpression createBooleanArrayExpression();
 
   /**
    * Returns a new object of class '<em>Or Where Entry</em>'.

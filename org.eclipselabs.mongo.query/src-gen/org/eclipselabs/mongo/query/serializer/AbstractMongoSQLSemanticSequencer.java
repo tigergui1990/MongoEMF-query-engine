@@ -14,17 +14,24 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.eclipselabs.mongo.query.query.AndWhereEntry;
+import org.eclipselabs.mongo.query.query.BooleanArrayExpression;
 import org.eclipselabs.mongo.query.query.BooleanExpression;
 import org.eclipselabs.mongo.query.query.Database;
+import org.eclipselabs.mongo.query.query.DateArrayExpression;
 import org.eclipselabs.mongo.query.query.DateExpression;
+import org.eclipselabs.mongo.query.query.DoubleArrayExpression;
 import org.eclipselabs.mongo.query.query.DoubleExpression;
-import org.eclipselabs.mongo.query.query.ExpressionWhereEntry;
+import org.eclipselabs.mongo.query.query.LongArrayExpression;
 import org.eclipselabs.mongo.query.query.LongExpression;
 import org.eclipselabs.mongo.query.query.Model;
+import org.eclipselabs.mongo.query.query.MultiExpressionWhereEntry;
+import org.eclipselabs.mongo.query.query.NullArrayExpression;
 import org.eclipselabs.mongo.query.query.NullExpression;
 import org.eclipselabs.mongo.query.query.OrWhereEntry;
 import org.eclipselabs.mongo.query.query.QueryPackage;
 import org.eclipselabs.mongo.query.query.ReplacableValue;
+import org.eclipselabs.mongo.query.query.SingleExpressionWhereEntry;
+import org.eclipselabs.mongo.query.query.StringArrayExpression;
 import org.eclipselabs.mongo.query.query.StringExpression;
 import org.eclipselabs.mongo.query.services.MongoSQLGrammarAccess;
 
@@ -67,6 +74,13 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 					return; 
 				}
 				else break;
+			case QueryPackage.BOOLEAN_ARRAY_EXPRESSION:
+				if(context == grammarAccess.getArrayExpressionRule() ||
+				   context == grammarAccess.getBooleanArrayExpressionRule()) {
+					sequence_BooleanArrayExpression(context, (BooleanArrayExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case QueryPackage.BOOLEAN_EXPRESSION:
 				if(context == grammarAccess.getBooleanExpressionRule() ||
 				   context == grammarAccess.getExpressionRule()) {
@@ -80,10 +94,24 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 					return; 
 				}
 				else break;
+			case QueryPackage.DATE_ARRAY_EXPRESSION:
+				if(context == grammarAccess.getArrayExpressionRule() ||
+				   context == grammarAccess.getDateArrayExpressionRule()) {
+					sequence_DateArrayExpression(context, (DateArrayExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case QueryPackage.DATE_EXPRESSION:
 				if(context == grammarAccess.getDateExpressionRule() ||
 				   context == grammarAccess.getExpressionRule()) {
 					sequence_DateExpression(context, (DateExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case QueryPackage.DOUBLE_ARRAY_EXPRESSION:
+				if(context == grammarAccess.getArrayExpressionRule() ||
+				   context == grammarAccess.getDoubleArrayExpressionRule()) {
+					sequence_DoubleArrayExpression(context, (DoubleArrayExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -94,15 +122,10 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 					return; 
 				}
 				else break;
-			case QueryPackage.EXPRESSION_WHERE_ENTRY:
-				if(context == grammarAccess.getAndWhereEntryRule() ||
-				   context == grammarAccess.getAndWhereEntryAccess().getAndWhereEntryEntriesAction_1_0() ||
-				   context == grammarAccess.getConcreteWhereEntryRule() ||
-				   context == grammarAccess.getExpressionWhereEntryRule() ||
-				   context == grammarAccess.getParWhereEntryRule() ||
-				   context == grammarAccess.getWhereEntryRule() ||
-				   context == grammarAccess.getWhereEntryAccess().getOrWhereEntryEntriesAction_1_0()) {
-					sequence_ExpressionWhereEntry(context, (ExpressionWhereEntry) semanticObject); 
+			case QueryPackage.LONG_ARRAY_EXPRESSION:
+				if(context == grammarAccess.getArrayExpressionRule() ||
+				   context == grammarAccess.getLongArrayExpressionRule()) {
+					sequence_LongArrayExpression(context, (LongArrayExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -116,6 +139,26 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 			case QueryPackage.MODEL:
 				if(context == grammarAccess.getModelRule()) {
 					sequence_Model(context, (Model) semanticObject); 
+					return; 
+				}
+				else break;
+			case QueryPackage.MULTI_EXPRESSION_WHERE_ENTRY:
+				if(context == grammarAccess.getAndWhereEntryRule() ||
+				   context == grammarAccess.getAndWhereEntryAccess().getAndWhereEntryEntriesAction_1_0() ||
+				   context == grammarAccess.getConcreteWhereEntryRule() ||
+				   context == grammarAccess.getExpressionWhereEntryRule() ||
+				   context == grammarAccess.getMultiExpressionWhereEntryRule() ||
+				   context == grammarAccess.getParWhereEntryRule() ||
+				   context == grammarAccess.getWhereEntryRule() ||
+				   context == grammarAccess.getWhereEntryAccess().getOrWhereEntryEntriesAction_1_0()) {
+					sequence_MultiExpressionWhereEntry(context, (MultiExpressionWhereEntry) semanticObject); 
+					return; 
+				}
+				else break;
+			case QueryPackage.NULL_ARRAY_EXPRESSION:
+				if(context == grammarAccess.getArrayExpressionRule() ||
+				   context == grammarAccess.getNullArrayExpressionRule()) {
+					sequence_NullArrayExpression(context, (NullArrayExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -144,6 +187,26 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 					return; 
 				}
 				else break;
+			case QueryPackage.SINGLE_EXPRESSION_WHERE_ENTRY:
+				if(context == grammarAccess.getAndWhereEntryRule() ||
+				   context == grammarAccess.getAndWhereEntryAccess().getAndWhereEntryEntriesAction_1_0() ||
+				   context == grammarAccess.getConcreteWhereEntryRule() ||
+				   context == grammarAccess.getExpressionWhereEntryRule() ||
+				   context == grammarAccess.getParWhereEntryRule() ||
+				   context == grammarAccess.getSingleExpressionWhereEntryRule() ||
+				   context == grammarAccess.getWhereEntryRule() ||
+				   context == grammarAccess.getWhereEntryAccess().getOrWhereEntryEntriesAction_1_0()) {
+					sequence_SingleExpressionWhereEntry(context, (SingleExpressionWhereEntry) semanticObject); 
+					return; 
+				}
+				else break;
+			case QueryPackage.STRING_ARRAY_EXPRESSION:
+				if(context == grammarAccess.getArrayExpressionRule() ||
+				   context == grammarAccess.getStringArrayExpressionRule()) {
+					sequence_StringArrayExpression(context, (StringArrayExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case QueryPackage.STRING_EXPRESSION:
 				if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getStringExpressionRule()) {
@@ -160,6 +223,15 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 	 *     (entries+=AndWhereEntry_AndWhereEntry_1_0 entries+=ConcreteWhereEntry+)
 	 */
 	protected void sequence_AndWhereEntry(EObject context, AndWhereEntry semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=BOOL values+=BOOL*)
+	 */
+	protected void sequence_BooleanArrayExpression(EObject context, BooleanArrayExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -184,6 +256,15 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (values+=DATE values+=DATE*)
+	 */
+	protected void sequence_DateArrayExpression(EObject context, DateArrayExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=DATE
 	 */
 	protected void sequence_DateExpression(EObject context, DateExpression semanticObject) {
@@ -195,6 +276,15 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDateExpressionAccess().getValueDATETerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=SIGNED_DOUBLE values+=SIGNED_DOUBLE*)
+	 */
+	protected void sequence_DoubleArrayExpression(EObject context, DoubleArrayExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -216,23 +306,10 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID operator=Operator rhs=Expression)
+	 *     (values+=SINGED_LONG values+=SINGED_LONG*)
 	 */
-	protected void sequence_ExpressionWhereEntry(EObject context, ExpressionWhereEntry semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__NAME));
-			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__OPERATOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__OPERATOR));
-			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__RHS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__RHS));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExpressionWhereEntryAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getExpressionWhereEntryAccess().getOperatorOperatorEnumRuleCall_1_0(), semanticObject.getOperator());
-		feeder.accept(grammarAccess.getExpressionWhereEntryAccess().getRhsExpressionParserRuleCall_2_0(), semanticObject.getRhs());
-		feeder.finish();
+	protected void sequence_LongArrayExpression(EObject context, LongArrayExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -257,6 +334,37 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 	 *     (attrs=ColumnList db=Database whereEntry=WhereEntry?)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID operator=ArrayOperator rhs=ArrayExpression)
+	 */
+	protected void sequence_MultiExpressionWhereEntry(EObject context, MultiExpressionWhereEntry semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__NAME));
+			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.MULTI_EXPRESSION_WHERE_ENTRY__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.MULTI_EXPRESSION_WHERE_ENTRY__OPERATOR));
+			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.MULTI_EXPRESSION_WHERE_ENTRY__RHS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.MULTI_EXPRESSION_WHERE_ENTRY__RHS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMultiExpressionWhereEntryAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getMultiExpressionWhereEntryAccess().getOperatorArrayOperatorEnumRuleCall_1_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getMultiExpressionWhereEntryAccess().getRhsArrayExpressionParserRuleCall_2_0(), semanticObject.getRhs());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+='null' values+='null'*)
+	 */
+	protected void sequence_NullArrayExpression(EObject context, NullArrayExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -290,6 +398,37 @@ public class AbstractMongoSQLSemanticSequencer extends AbstractSemanticSequencer
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getReplacableValueAccess().getValueQuestionMarkKeyword_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID operator=Operator rhs=Expression)
+	 */
+	protected void sequence_SingleExpressionWhereEntry(EObject context, SingleExpressionWhereEntry semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.EXPRESSION_WHERE_ENTRY__NAME));
+			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.SINGLE_EXPRESSION_WHERE_ENTRY__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.SINGLE_EXPRESSION_WHERE_ENTRY__OPERATOR));
+			if(transientValues.isValueTransient(semanticObject, QueryPackage.Literals.SINGLE_EXPRESSION_WHERE_ENTRY__RHS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QueryPackage.Literals.SINGLE_EXPRESSION_WHERE_ENTRY__RHS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSingleExpressionWhereEntryAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSingleExpressionWhereEntryAccess().getOperatorOperatorEnumRuleCall_1_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getSingleExpressionWhereEntryAccess().getRhsExpressionParserRuleCall_2_0(), semanticObject.getRhs());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=STRING values+=STRING*)
+	 */
+	protected void sequence_StringArrayExpression(EObject context, StringArrayExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
